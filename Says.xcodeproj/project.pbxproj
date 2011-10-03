@@ -7,6 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C562977143A28BB00CFCB0D /* MenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C562976143A28BB00CFCB0D /* MenuLayer.m */; };
+		9C56297A143A2C9800CFCB0D /* saysdoble.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C562979143A2C9800CFCB0D /* saysdoble.png */; };
+		9C56297D143A34C100CFCB0D /* agua_dwn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C56297B143A34C100CFCB0D /* agua_dwn.png */; };
+		9C56297E143A34C100CFCB0D /* agua.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C56297C143A34C100CFCB0D /* agua.png */; };
+		9C562981143A35D100CFCB0D /* playBut.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C56297F143A35D000CFCB0D /* playBut.png */; };
+		9C562982143A35D100CFCB0D /* playBut1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C562980143A35D100CFCB0D /* playBut1.png */; };
+		9C562985143A378000CFCB0D /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C562984143A378000CFCB0D /* GameScene.m */; };
+		9C562996143A429800CFCB0D /* amarillo_dwn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C562986143A428E00CFCB0D /* amarillo_dwn.png */; };
+		9C562997143A429800CFCB0D /* amarillo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C562987143A428E00CFCB0D /* amarillo.png */; };
+		9C562998143A429800CFCB0D /* azul_dwn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C562988143A428F00CFCB0D /* azul_dwn.png */; };
+		9C562999143A429800CFCB0D /* azul.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C562989143A428F00CFCB0D /* azul.png */; };
+		9C56299A143A429800CFCB0D /* cafe_dwn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C56298A143A429000CFCB0D /* cafe_dwn.png */; };
+		9C56299B143A429800CFCB0D /* cafe.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C56298B143A429100CFCB0D /* cafe.png */; };
+		9C56299C143A429800CFCB0D /* morado_dwn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C56298C143A429200CFCB0D /* morado_dwn.png */; };
+		9C56299D143A429800CFCB0D /* morado.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C56298D143A429200CFCB0D /* morado.png */; };
+		9C56299E143A429800CFCB0D /* naranja_dwn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C56298E143A429300CFCB0D /* naranja_dwn.png */; };
+		9C56299F143A429800CFCB0D /* naranja.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C56298F143A429400CFCB0D /* naranja.png */; };
+		9C5629A0143A429800CFCB0D /* rojo_dwn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C562990143A429500CFCB0D /* rojo_dwn.png */; };
+		9C5629A1143A429800CFCB0D /* rojo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C562991143A429500CFCB0D /* rojo.png */; };
+		9C5629A2143A429800CFCB0D /* verde_dwn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C562992143A429600CFCB0D /* verde_dwn.png */; };
+		9C5629A3143A429800CFCB0D /* verde.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C562993143A429700CFCB0D /* verde.png */; };
+		9C5629A4143A429800CFCB0D /* violeta_dwn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C562994143A429700CFCB0D /* violeta_dwn.png */; };
+		9C5629A5143A429800CFCB0D /* violeta.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C562995143A429800CFCB0D /* violeta.png */; };
 		DE9517211439F8B20038448F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9517201439F8B20038448F /* QuartzCore.framework */; };
 		DE9517231439F8B20038448F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9517221439F8B20038448F /* OpenGLES.framework */; };
 		DE9517251439F8B20038448F /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9517241439F8B20038448F /* OpenAL.framework */; };
@@ -123,10 +146,34 @@
 		DE95187B1439F8B40038448F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE95187A1439F8B40038448F /* main.m */; };
 		DE95187E1439F8B40038448F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE95187D1439F8B40038448F /* AppDelegate.m */; };
 		DE9518811439F8B40038448F /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9518801439F8B40038448F /* RootViewController.m */; };
-		DE9518841439F8B40038448F /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9518831439F8B40038448F /* HelloWorldLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C562975143A28BB00CFCB0D /* MenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuLayer.h; sourceTree = "<group>"; };
+		9C562976143A28BB00CFCB0D /* MenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuLayer.m; sourceTree = "<group>"; };
+		9C562979143A2C9800CFCB0D /* saysdoble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saysdoble.png; sourceTree = "<group>"; };
+		9C56297B143A34C100CFCB0D /* agua_dwn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = agua_dwn.png; sourceTree = "<group>"; };
+		9C56297C143A34C100CFCB0D /* agua.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = agua.png; sourceTree = "<group>"; };
+		9C56297F143A35D000CFCB0D /* playBut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playBut.png; sourceTree = "<group>"; };
+		9C562980143A35D100CFCB0D /* playBut1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playBut1.png; sourceTree = "<group>"; };
+		9C562983143A377F00CFCB0D /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		9C562984143A378000CFCB0D /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		9C562986143A428E00CFCB0D /* amarillo_dwn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amarillo_dwn.png; sourceTree = "<group>"; };
+		9C562987143A428E00CFCB0D /* amarillo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amarillo.png; sourceTree = "<group>"; };
+		9C562988143A428F00CFCB0D /* azul_dwn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = azul_dwn.png; sourceTree = "<group>"; };
+		9C562989143A428F00CFCB0D /* azul.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = azul.png; sourceTree = "<group>"; };
+		9C56298A143A429000CFCB0D /* cafe_dwn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cafe_dwn.png; sourceTree = "<group>"; };
+		9C56298B143A429100CFCB0D /* cafe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cafe.png; sourceTree = "<group>"; };
+		9C56298C143A429200CFCB0D /* morado_dwn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = morado_dwn.png; sourceTree = "<group>"; };
+		9C56298D143A429200CFCB0D /* morado.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = morado.png; sourceTree = "<group>"; };
+		9C56298E143A429300CFCB0D /* naranja_dwn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = naranja_dwn.png; sourceTree = "<group>"; };
+		9C56298F143A429400CFCB0D /* naranja.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = naranja.png; sourceTree = "<group>"; };
+		9C562990143A429500CFCB0D /* rojo_dwn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rojo_dwn.png; sourceTree = "<group>"; };
+		9C562991143A429500CFCB0D /* rojo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rojo.png; sourceTree = "<group>"; };
+		9C562992143A429600CFCB0D /* verde_dwn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = verde_dwn.png; sourceTree = "<group>"; };
+		9C562993143A429700CFCB0D /* verde.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = verde.png; sourceTree = "<group>"; };
+		9C562994143A429700CFCB0D /* violeta_dwn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = violeta_dwn.png; sourceTree = "<group>"; };
+		9C562995143A429800CFCB0D /* violeta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = violeta.png; sourceTree = "<group>"; };
 		DE95171C1439F8B20038448F /* Says.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Says.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE9517201439F8B20038448F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DE9517221439F8B20038448F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -358,8 +405,6 @@
 		DE95187D1439F8B40038448F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DE95187F1439F8B40038448F /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		DE9518801439F8B40038448F /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		DE9518821439F8B40038448F /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		DE9518831439F8B40038448F /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		DE9518851439F8B40038448F /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -419,10 +464,12 @@
 			children = (
 				DE95187C1439F8B40038448F /* AppDelegate.h */,
 				DE95187D1439F8B40038448F /* AppDelegate.m */,
+				9C562975143A28BB00CFCB0D /* MenuLayer.h */,
+				9C562976143A28BB00CFCB0D /* MenuLayer.m */,
 				DE95187F1439F8B40038448F /* RootViewController.h */,
 				DE9518801439F8B40038448F /* RootViewController.m */,
-				DE9518821439F8B40038448F /* HelloWorldLayer.h */,
-				DE9518831439F8B40038448F /* HelloWorldLayer.m */,
+				9C562983143A377F00CFCB0D /* GameScene.h */,
+				9C562984143A378000CFCB0D /* GameScene.m */,
 				DE9518851439F8B40038448F /* GameConfig.h */,
 				DE9517311439F8B20038448F /* Resources */,
 				DE9517451439F8B20038448F /* cocos2d */,
@@ -438,6 +485,27 @@
 		DE9517311439F8B20038448F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9C562986143A428E00CFCB0D /* amarillo_dwn.png */,
+				9C562987143A428E00CFCB0D /* amarillo.png */,
+				9C562988143A428F00CFCB0D /* azul_dwn.png */,
+				9C562989143A428F00CFCB0D /* azul.png */,
+				9C56298A143A429000CFCB0D /* cafe_dwn.png */,
+				9C56298B143A429100CFCB0D /* cafe.png */,
+				9C56298C143A429200CFCB0D /* morado_dwn.png */,
+				9C56298D143A429200CFCB0D /* morado.png */,
+				9C56298E143A429300CFCB0D /* naranja_dwn.png */,
+				9C56298F143A429400CFCB0D /* naranja.png */,
+				9C562990143A429500CFCB0D /* rojo_dwn.png */,
+				9C562991143A429500CFCB0D /* rojo.png */,
+				9C562992143A429600CFCB0D /* verde_dwn.png */,
+				9C562993143A429700CFCB0D /* verde.png */,
+				9C562994143A429700CFCB0D /* violeta_dwn.png */,
+				9C562995143A429800CFCB0D /* violeta.png */,
+				9C56297F143A35D000CFCB0D /* playBut.png */,
+				9C562980143A35D100CFCB0D /* playBut1.png */,
+				9C56297B143A34C100CFCB0D /* agua_dwn.png */,
+				9C56297C143A34C100CFCB0D /* agua.png */,
+				9C562979143A2C9800CFCB0D /* saysdoble.png */,
 				DE9517321439F8B20038448F /* Default.png */,
 				DE9517341439F8B20038448F /* fps_images.png */,
 				DE9517361439F8B20038448F /* Icon-72.png */,
@@ -758,6 +826,27 @@
 				DE95173F1439F8B20038448F /* Icon.png in Resources */,
 				DE9517411439F8B20038448F /* Icon@2x.png in Resources */,
 				DE9517441439F8B20038448F /* iTunesArtwork in Resources */,
+				9C56297A143A2C9800CFCB0D /* saysdoble.png in Resources */,
+				9C56297D143A34C100CFCB0D /* agua_dwn.png in Resources */,
+				9C56297E143A34C100CFCB0D /* agua.png in Resources */,
+				9C562981143A35D100CFCB0D /* playBut.png in Resources */,
+				9C562982143A35D100CFCB0D /* playBut1.png in Resources */,
+				9C562996143A429800CFCB0D /* amarillo_dwn.png in Resources */,
+				9C562997143A429800CFCB0D /* amarillo.png in Resources */,
+				9C562998143A429800CFCB0D /* azul_dwn.png in Resources */,
+				9C562999143A429800CFCB0D /* azul.png in Resources */,
+				9C56299A143A429800CFCB0D /* cafe_dwn.png in Resources */,
+				9C56299B143A429800CFCB0D /* cafe.png in Resources */,
+				9C56299C143A429800CFCB0D /* morado_dwn.png in Resources */,
+				9C56299D143A429800CFCB0D /* morado.png in Resources */,
+				9C56299E143A429800CFCB0D /* naranja_dwn.png in Resources */,
+				9C56299F143A429800CFCB0D /* naranja.png in Resources */,
+				9C5629A0143A429800CFCB0D /* rojo_dwn.png in Resources */,
+				9C5629A1143A429800CFCB0D /* rojo.png in Resources */,
+				9C5629A2143A429800CFCB0D /* verde_dwn.png in Resources */,
+				9C5629A3143A429800CFCB0D /* verde.png in Resources */,
+				9C5629A4143A429800CFCB0D /* violeta_dwn.png in Resources */,
+				9C5629A5143A429800CFCB0D /* violeta.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -867,7 +956,8 @@
 				DE95187B1439F8B40038448F /* main.m in Sources */,
 				DE95187E1439F8B40038448F /* AppDelegate.m in Sources */,
 				DE9518811439F8B40038448F /* RootViewController.m in Sources */,
-				DE9518841439F8B40038448F /* HelloWorldLayer.m in Sources */,
+				9C562977143A28BB00CFCB0D /* MenuLayer.m in Sources */,
+				9C562985143A378000CFCB0D /* GameScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -878,7 +968,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -898,7 +988,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = NDEBUG;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
