@@ -24,7 +24,7 @@
         CCLOG(@"%@: %@", NSStringFromSelector(_cmd), self);
         
         CCSprite* menuTitle = [CCSprite spriteWithFile:@"saysdoble.png"];
-        [self addChild:menuTitle];
+        [self addChild:menuTitle z:0 tag:1];
         
         CCSprite* btnPlayNormal = [CCSprite spriteWithFile:@"playBut.png"];
         CCSprite* btnPlaySelected = [CCSprite spriteWithFile:@"playBut1.png"];
@@ -39,15 +39,17 @@
         float btnHowToHeightHalved = [btnHowToNormal texture].contentSize.height * 0.5f;
         float btnHowToWidthHalved = [btnHowToNormal texture].contentSize.width * 0.5f;
         
+        CCMenuItemSprite* btnHowTo = [CCMenuItemSprite itemFromNormalSprite:btnHowToNormal selectedSprite:btnHowToSelected target:self selector:@selector(menuHowToBtnTouched:)];
+        btnHowTo.position = CGPointMake(btnHowToWidthHalved, winSize.height - (titleHeight + btnHowToHeightHalved)); 
+        
         CCMenuItemSprite* btnPlay = [CCMenuItemSprite itemFromNormalSprite:btnPlayNormal selectedSprite:btnPlaySelected target:self selector:@selector(menuPlayBtnTouched:)];
         btnPlay.position = CGPointMake(winSize.width/2, winSize.height/2 - btnPlayHeightHalved);
-        CCMenuItemSprite* btnHowTo = [CCMenuItemSprite itemFromNormalSprite:btnHowToNormal selectedSprite:btnHowToSelected target:self selector:@selector(menuHowToBtnTouched:)];
-        btnHowTo.position = CGPointMake(btnHowToWidthHalved, titleHeight - btnHowToHeightHalved); 
+        
         menuTitle.position = CGPointMake(winSize.width/2, winSize.height - titleHeight/2);
         
+        
         CCMenu* menu = [CCMenu menuWithItems:btnPlay, btnHowTo, nil];
-        menu.position = CGPointMake(winSize.width/2, winSize.height/2);
-        [self addChild:menu];
+        [self addChild:menu z:0 tag:2];
     }
     return self;
 }
