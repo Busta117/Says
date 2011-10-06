@@ -29,25 +29,24 @@
 -(id)init {
     if ((self = [super init])) {
         //define margin depending the device. --> must do!!
-        margin = 15;
+        margin = 7;
         
         CCLOG(@"%@: %@", NSStringFromSelector(_cmd), self);
         
         CCSprite* menuTitle = [CCSprite spriteWithFile:@"saysdoble.png"];
         [self addChild:menuTitle];
         
-        CCSprite* btnPlayNormal = [CCSprite spriteWithFile:@"playBut.png"];
-        CCSprite* btnPlaySelected = [CCSprite spriteWithFile:@"playBut1.png"];
+        CCSprite* btnPlayNormal = [CCSprite spriteWithFile:@"menu_agua.png"];
+        CCSprite* btnPlaySelected = [CCSprite spriteWithFile:@"menu_agua_dwn.png"];
         
-        CCSprite* btnHowToNormal = [CCSprite spriteWithFile:@"cafe.png"];
-        CCSprite* btnHowToSelected = [CCSprite spriteWithFile:@"cafe_dwn.png"];
+        CCSprite* btnHowToNormal = [CCSprite spriteWithFile:@"menu_cafe.png"];
+        CCSprite* btnHowToSelected = [CCSprite spriteWithFile:@"menu_cafe_dwn.png"];
         
         CCSprite* btnTopTenNormal = [CCSprite spriteWithFile:@"rojo.png"];
         CCSprite* btnTopTenSelected = [CCSprite spriteWithFile:@"rojo_dwn.png"];
         
         CCSprite* btnConfigNormal = [CCSprite spriteWithFile:@"azul.png"];
         CCSprite* btnConfigSelected = [CCSprite spriteWithFile:@"azul_dwn.png"];
-        
         
         CGSize winSize = [[CCDirector sharedDirector] winSize];
         float titleHeight = [menuTitle texture].contentSize.height * 0.5f;
@@ -56,10 +55,21 @@
         float btnWidthHalved = [btnHowToNormal texture].contentSize.width * 0.5f;
         
         CCMenuItemSprite* btnPlay = [CCMenuItemSprite itemFromNormalSprite:btnPlayNormal selectedSprite:btnPlaySelected target:self selector:@selector(menuPlayBtnTouched:)];
-        btnPlay.position = CGPointMake(winSize.width/2, winSize.height/2.3);
+        btnPlay.position = CGPointMake(winSize.width/2, winSize.height/2.82);
+        
+        CCLabelTTF *playLbl = [[[CCLabelTTF alloc] initWithString:@"Play" fontName:@"Arial" fontSize:15] autorelease];
+        playLbl.position = ccp([btnPlay rect].size.width * 0.5f,[btnPlay rect].size.height * 0.5f);
+        playLbl.color = ccc3(255,255,255);
+        [btnPlay addChild:playLbl];
+        
         
         CCMenuItemSprite* btnHowTo = [CCMenuItemSprite itemFromNormalSprite:btnHowToNormal selectedSprite:btnHowToSelected target:self selector:@selector(menuHowToBtnTouched:)];
-        btnHowTo.position = CGPointMake(btnWidthHalved + margin, winSize.height/1.6);
+        btnHowTo.position = CGPointMake(btnWidthHalved + margin, winSize.height/1.8);
+        
+        CCLabelTTF *HowToLbl = [[[CCLabelTTF alloc] initWithString:@"How To Play" fontName:@"Arial" fontSize:15] autorelease];
+        HowToLbl.position = ccp([btnHowTo rect].size.width * 0.5f,[btnHowTo rect].size.height * 0.5f);
+        HowToLbl.color = ccc3(255,255,255);
+        [btnHowTo addChild:HowToLbl];
         
         CCMenuItemSprite* btnTopTen = [CCMenuItemSprite itemFromNormalSprite:btnTopTenNormal selectedSprite:btnTopTenSelected target:self selector:@selector(menuTopTenBtnTouched:)];
         btnTopTen.position = CGPointMake(winSize.width - btnWidthHalved - margin, winSize.height/1.6);
