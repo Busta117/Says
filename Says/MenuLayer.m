@@ -9,6 +9,13 @@
 #import "MenuLayer.h"
 #import "GameScene.h"
 
+@interface MenuLayer (privateMethods)
+-(void)menuPlayBtnTouched: (id)sender;
+-(void)menuHowToBtnTouched: (id)sender;
+-(void)menuTopTenBtnTouched: (id)sender;
+-(void)menuConfigBtnTouched: (id)sender;
+@end
+
 
 @implementation MenuLayer
 
@@ -21,6 +28,9 @@
 
 -(id)init {
     if ((self = [super init])) {
+        //define margin depending the device. --> must do!!
+        margin = 15;
+        
         CCLOG(@"%@: %@", NSStringFromSelector(_cmd), self);
         
         CCSprite* menuTitle = [CCSprite spriteWithFile:@"saysdoble.png"];
@@ -31,22 +41,36 @@
         
         CCSprite* btnHowToNormal = [CCSprite spriteWithFile:@"cafe.png"];
         CCSprite* btnHowToSelected = [CCSprite spriteWithFile:@"cafe_dwn.png"];
-
+        
+        CCSprite* btnTopTenNormal = [CCSprite spriteWithFile:@"rojo.png"];
+        CCSprite* btnTopTenSelected = [CCSprite spriteWithFile:@"rojo_dwn.png"];
+        
+        CCSprite* btnConfigNormal = [CCSprite spriteWithFile:@"azul.png"];
+        CCSprite* btnConfigSelected = [CCSprite spriteWithFile:@"azul_dwn.png"];
+        
         
         CGSize winSize = [[CCDirector sharedDirector] winSize];
         float titleHeight = [menuTitle texture].contentSize.height * 0.5f;
-        float btnPlayHeightHalved = [btnPlayNormal texture].contentSize.height * 0.5f;
-        float btnHowToHeightHalved = [btnHowToNormal texture].contentSize.height * 0.5f;
-        float btnHowToWidthHalved = [btnHowToNormal texture].contentSize.width * 0.5f;
+        //float btnPlayHeightHalved = [btnPlayNormal texture].contentSize.height * 0.5f;
+        float btnHeightHalved = [btnHowToNormal texture].contentSize.height * 0.5f;
+        float btnWidthHalved = [btnHowToNormal texture].contentSize.width * 0.5f;
         
         CCMenuItemSprite* btnPlay = [CCMenuItemSprite itemFromNormalSprite:btnPlayNormal selectedSprite:btnPlaySelected target:self selector:@selector(menuPlayBtnTouched:)];
-        btnPlay.position = CGPointMake(winSize.width/2, winSize.height/2 - btnPlayHeightHalved);
-        CCMenuItemSprite* btnHowTo = [CCMenuItemSprite itemFromNormalSprite:btnHowToNormal selectedSprite:btnHowToSelected target:self selector:@selector(menuHowToBtnTouched:)];
-        btnHowTo.position = CGPointMake(btnHowToWidthHalved, titleHeight - btnHowToHeightHalved); 
-        menuTitle.position = CGPointMake(winSize.width/2, winSize.height - titleHeight/2);
+        btnPlay.position = CGPointMake(winSize.width/2, winSize.height/2.3);
         
-        CCMenu* menu = [CCMenu menuWithItems:btnPlay, btnHowTo, nil];
-        menu.position = CGPointMake(winSize.width/2, winSize.height/2);
+        CCMenuItemSprite* btnHowTo = [CCMenuItemSprite itemFromNormalSprite:btnHowToNormal selectedSprite:btnHowToSelected target:self selector:@selector(menuHowToBtnTouched:)];
+        btnHowTo.position = CGPointMake(btnWidthHalved + margin, winSize.height/1.6);
+        
+        CCMenuItemSprite* btnTopTen = [CCMenuItemSprite itemFromNormalSprite:btnTopTenNormal selectedSprite:btnTopTenSelected target:self selector:@selector(menuTopTenBtnTouched:)];
+        btnTopTen.position = CGPointMake(winSize.width - btnWidthHalved - margin, winSize.height/1.6);
+        
+        CCMenuItemSprite* btnConfig = [CCMenuItemSprite itemFromNormalSprite:btnConfigNormal selectedSprite:btnConfigSelected target:self selector:@selector(menuConfigBtnTouched:)];
+        btnConfig.position = CGPointMake(btnWidthHalved + margin, 0);
+        
+        menuTitle.position = CGPointMake(winSize.width/2, winSize.height - margin*3 - titleHeight/2);
+        
+        CCMenu* menu = [CCMenu menuWithItems:btnPlay,btnHowTo, btnTopTen, nil];
+        menu.position = CGPointMake(0.0f, 0.0f);
         [self addChild:menu];
     }
     return self;
@@ -62,6 +86,15 @@
     [[CCDirector sharedDirector] replaceScene:tran];
 }
 
+-(void)menuTopTenBtnTouched: (id)sender {
+    CCTransitionFade* tran = [CCTransitionFade transitionWithDuration:1 scene:[GameScene scene] withColor:ccWHITE];
+    [[CCDirector sharedDirector] replaceScene:tran];
+}
+
+-(void)menuConfigBtnTouched: (id)sender {
+    CCTransitionFade* tran = [CCTransitionFade transitionWithDuration:1 scene:[GameScene scene] withColor:ccWHITE];
+    [[CCDirector sharedDirector] replaceScene:tran];
+}
 -(void)dealloc {
     [super dealloc];
 }

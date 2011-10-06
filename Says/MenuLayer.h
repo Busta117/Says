@@ -10,7 +10,7 @@
 #import "cocos2d.h"
 
 @interface MenuLayer : CCLayer {
-    
+    float margin;
 }
 
 +(id)scene;
