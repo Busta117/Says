@@ -1,19 +1,19 @@
 //
-//  GameScene.m
+//  ConfigScene.m
 //  Says
 //
-//  Created by Juan Guillermo del Valle Ruiz on 10/3/11.
+//  Created by Juan Guillermo del Valle Ruiz on 10/11/11.
 //  Copyright 2011 EAFIT. All rights reserved.
 //
 
-#import "GameScene.h"
+#import "ConfigScene.h"
 
 
-@implementation GameScene
+@implementation ConfigScene
 
 +(id)scene {
     CCScene* scene = [CCScene node];
-    CCLayer* layer = [GameScene node];
+    CCLayer* layer = [ConfigScene node];
     [scene addChild:layer];
     return scene;
 }

@@ -1,19 +1,19 @@
 //
-//  GameScene.m
+//  TopTen.m
 //  Says
 //
-//  Created by Juan Guillermo del Valle Ruiz on 10/3/11.
+//  Created by Juan Guillermo del Valle Ruiz on 10/11/11.
 //  Copyright 2011 EAFIT. All rights reserved.
 //
 
-#import "GameScene.h"
+#import "TopTenScene.h"
 
 
-@implementation GameScene
+@implementation TopTenScene
 
 +(id)scene {
     CCScene* scene = [CCScene node];
-    CCLayer* layer = [GameScene node];
+    CCLayer* layer = [TopTenScene node];
     [scene addChild:layer];
     return scene;
 }

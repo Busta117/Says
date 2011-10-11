@@ -8,6 +8,10 @@
 
 #import "MenuLayer.h"
 #import "GameScene.h"
+#import "HowToScene.h"
+#import "TopTenScene.h"
+#import "ConfigScene.h"
+#import "AboutScene.h"
 
 @interface MenuLayer (privateMethods)
 -(void)menuPlayBtnTouched: (id)sender;
@@ -34,6 +38,8 @@
         
         CCLOG(@"%@: %@", NSStringFromSelector(_cmd), self);
         
+        //Creación de Sprites
+        
         CCSprite* menuTitle = [CCSprite spriteWithFile:@"saysdoble.png"];
         [self addChild:menuTitle];
         
@@ -52,12 +58,15 @@
         CCSprite* btnAboutNormal = [CCSprite spriteWithFile:@"menu_cafe.png"];
         CCSprite* btnAboutSelected = [CCSprite spriteWithFile:@"menu_cafe_dwn.png"];
         
+        
+        //Variables para la ubicación de los botones del menu
         CGSize winSize = [[CCDirector sharedDirector] winSize];
         float titleHeight = [menuTitle texture].contentSize.height * 0.5f;
-        //float btnPlayHeightHalved = [btnPlayNormal texture].contentSize.height * 0.5f;
         float btnHeightHalved = [btnHowToNormal texture].contentSize.height * 0.5f;
         float btnWidthHalved = [btnHowToNormal texture].contentSize.width * 0.5f;
         
+        
+        //Inicializacion y ubicación de Sprites con sus respectivos lbl
         CCMenuItemSprite* btnPlay = [CCMenuItemSprite itemFromNormalSprite:btnPlayNormal selectedSprite:btnPlaySelected target:self selector:@selector(menuPlayBtnTouched:)];
         btnPlay.position = CGPointMake(winSize.width/2, winSize.height/2.82);
         
@@ -103,7 +112,7 @@
         aboutLbl.color = ccc3(255, 255, 255);
         [btnAbout addChild:aboutLbl];
         
-        menuTitle.position = CGPointMake(winSize.width/2, winSize.height - margin*3 - titleHeight/2);
+        menuTitle.position = CGPointMake(winSize.width/2, winSize.height - margin*4 - titleHeight/2);
         
         CCMenu* menu = [CCMenu menuWithItems:btnPlay, btnHowTo, btnTopTen, btnConfig, btnAbout, nil];
         menu.position = CGPointMake(0.0f, 0.0f);
@@ -118,22 +127,22 @@
 }
 
 -(void)menuHowToBtnTouched: (id)sender {
-    CCTransitionFade* tran = [CCTransitionFade transitionWithDuration:1 scene:[GameScene scene] withColor:ccWHITE];
+    CCTransitionFade* tran = [CCTransitionFade transitionWithDuration:1 scene:[HowToScene  scene] withColor:ccWHITE];
     [[CCDirector sharedDirector] replaceScene:tran];
 }
 
 -(void)menuTopTenBtnTouched: (id)sender {
-    CCTransitionFade* tran = [CCTransitionFade transitionWithDuration:1 scene:[GameScene scene] withColor:ccWHITE];
+    CCTransitionFade* tran = [CCTransitionFade transitionWithDuration:1 scene:[TopTenScene scene] withColor:ccWHITE];
     [[CCDirector sharedDirector] replaceScene:tran];
 }
 
 -(void)menuConfigBtnTouched: (id)sender {
-    CCTransitionFade* tran = [CCTransitionFade transitionWithDuration:1 scene:[GameScene scene] withColor:ccWHITE];
+    CCTransitionFade* tran = [CCTransitionFade transitionWithDuration:1 scene:[ConfigScene scene] withColor:ccWHITE];
     [[CCDirector sharedDirector] replaceScene:tran];
 }
 
 -(void)menuAboutBtnTouched: (id)sender {
-    CCTransitionFade* tran = [CCTransitionFade transitionWithDuration:1 scene:[GameScene scene] withColor:ccWHITE];
+    CCTransitionFade* tran = [CCTransitionFade transitionWithDuration:1 scene:[AboutScene scene] withColor:ccWHITE];
     [[CCDirector sharedDirector] replaceScene:tran];
 }
 

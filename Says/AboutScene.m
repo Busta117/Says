@@ -1,19 +1,19 @@
 //
-//  GameScene.m
+//  AboutScene.m
 //  Says
 //
-//  Created by Juan Guillermo del Valle Ruiz on 10/3/11.
+//  Created by Juan Guillermo del Valle Ruiz on 10/11/11.
 //  Copyright 2011 EAFIT. All rights reserved.
 //
 
-#import "GameScene.h"
+#import "AboutScene.h"
 
 
-@implementation GameScene
+@implementation AboutScene
 
 +(id)scene {
     CCScene* scene = [CCScene node];
-    CCLayer* layer = [GameScene node];
+    CCLayer* layer = [AboutScene node];
     [scene addChild:layer];
     return scene;
 }

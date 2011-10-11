@@ -32,6 +32,10 @@
 		52735F0B143D683500AA96A0 /* menu_agua.png in Resources */ = {isa = PBXBuildFile; fileRef = 52735F09143D683500AA96A0 /* menu_agua.png */; };
 		52735F0E143D6ADA00AA96A0 /* menu_cafe_dwn.png in Resources */ = {isa = PBXBuildFile; fileRef = 52735F0C143D6ADA00AA96A0 /* menu_cafe_dwn.png */; };
 		52735F0F143D6ADA00AA96A0 /* menu_cafe.png in Resources */ = {isa = PBXBuildFile; fileRef = 52735F0D143D6ADA00AA96A0 /* menu_cafe.png */; };
+		9C3D7BE41444FF8D00B210F2 /* HowToScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BE31444FF8D00B210F2 /* HowToScene.m */; };
+		9C3D7BE81445019C00B210F2 /* TopTenScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BE71445019C00B210F2 /* TopTenScene.m */; };
+		9C3D7BEB1445023F00B210F2 /* ConfigScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BEA1445023F00B210F2 /* ConfigScene.m */; };
+		9C3D7BEE1445031300B210F2 /* AboutScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BED1445031300B210F2 /* AboutScene.m */; };
 		9C562977143A28BB00CFCB0D /* MenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C562976143A28BB00CFCB0D /* MenuLayer.m */; };
 		9C562985143A378000CFCB0D /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C562984143A378000CFCB0D /* GameScene.m */; };
 		DE9517211439F8B20038448F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9517201439F8B20038448F /* QuartzCore.framework */; };
@@ -178,6 +182,14 @@
 		52735F09143D683500AA96A0 /* menu_agua.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_agua.png; path = Resources/menu_agua.png; sourceTree = "<group>"; };
 		52735F0C143D6ADA00AA96A0 /* menu_cafe_dwn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_cafe_dwn.png; path = Resources/menu_cafe_dwn.png; sourceTree = "<group>"; };
 		52735F0D143D6ADA00AA96A0 /* menu_cafe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_cafe.png; path = Resources/menu_cafe.png; sourceTree = "<group>"; };
+		9C3D7BE21444FF8D00B210F2 /* HowToScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HowToScene.h; sourceTree = "<group>"; };
+		9C3D7BE31444FF8D00B210F2 /* HowToScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HowToScene.m; sourceTree = "<group>"; };
+		9C3D7BE61445019C00B210F2 /* TopTenScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopTenScene.h; sourceTree = "<group>"; };
+		9C3D7BE71445019C00B210F2 /* TopTenScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopTenScene.m; sourceTree = "<group>"; };
+		9C3D7BE91445023F00B210F2 /* ConfigScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigScene.h; sourceTree = "<group>"; };
+		9C3D7BEA1445023F00B210F2 /* ConfigScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigScene.m; sourceTree = "<group>"; };
+		9C3D7BEC1445031300B210F2 /* AboutScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutScene.h; sourceTree = "<group>"; };
+		9C3D7BED1445031300B210F2 /* AboutScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutScene.m; sourceTree = "<group>"; };
 		9C562975143A28BB00CFCB0D /* MenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuLayer.h; sourceTree = "<group>"; };
 		9C562976143A28BB00CFCB0D /* MenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuLayer.m; sourceTree = "<group>"; };
 		9C562983143A377F00CFCB0D /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
@@ -479,6 +491,14 @@
 				9C562983143A377F00CFCB0D /* GameScene.h */,
 				9C562984143A378000CFCB0D /* GameScene.m */,
 				DE9518851439F8B40038448F /* GameConfig.h */,
+				9C3D7BE21444FF8D00B210F2 /* HowToScene.h */,
+				9C3D7BE31444FF8D00B210F2 /* HowToScene.m */,
+				9C3D7BE61445019C00B210F2 /* TopTenScene.h */,
+				9C3D7BE71445019C00B210F2 /* TopTenScene.m */,
+				9C3D7BE91445023F00B210F2 /* ConfigScene.h */,
+				9C3D7BEA1445023F00B210F2 /* ConfigScene.m */,
+				9C3D7BEC1445031300B210F2 /* AboutScene.h */,
+				9C3D7BED1445031300B210F2 /* AboutScene.m */,
 				DE9517311439F8B20038448F /* Resources */,
 				DE9517451439F8B20038448F /* cocos2d */,
 				DE9518361439F8B40038448F /* CocosDenshion */,
@@ -974,6 +994,10 @@
 				DE9518811439F8B40038448F /* RootViewController.m in Sources */,
 				9C562977143A28BB00CFCB0D /* MenuLayer.m in Sources */,
 				9C562985143A378000CFCB0D /* GameScene.m in Sources */,
+				9C3D7BE41444FF8D00B210F2 /* HowToScene.m in Sources */,
+				9C3D7BE81445019C00B210F2 /* TopTenScene.m in Sources */,
+				9C3D7BEB1445023F00B210F2 /* ConfigScene.m in Sources */,
+				9C3D7BEE1445031300B210F2 /* AboutScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
