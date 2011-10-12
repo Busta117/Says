@@ -482,29 +482,15 @@
 		DE9517301439F8B20038448F /* Says */ = {
 			isa = PBXGroup;
 			children = (
+				F35E215A144544EF00022C85 /* Libs */,
+				F35E2158144544D300022C85 /* Scenes */,
 				DE95187C1439F8B40038448F /* AppDelegate.h */,
 				DE95187D1439F8B40038448F /* AppDelegate.m */,
 				9C562975143A28BB00CFCB0D /* MenuLayer.h */,
 				9C562976143A28BB00CFCB0D /* MenuLayer.m */,
 				DE95187F1439F8B40038448F /* RootViewController.h */,
 				DE9518801439F8B40038448F /* RootViewController.m */,
-				9C562983143A377F00CFCB0D /* GameScene.h */,
-				9C562984143A378000CFCB0D /* GameScene.m */,
-				DE9518851439F8B40038448F /* GameConfig.h */,
-				9C3D7BE21444FF8D00B210F2 /* HowToScene.h */,
-				9C3D7BE31444FF8D00B210F2 /* HowToScene.m */,
-				9C3D7BE61445019C00B210F2 /* TopTenScene.h */,
-				9C3D7BE71445019C00B210F2 /* TopTenScene.m */,
-				9C3D7BE91445023F00B210F2 /* ConfigScene.h */,
-				9C3D7BEA1445023F00B210F2 /* ConfigScene.m */,
-				9C3D7BEC1445031300B210F2 /* AboutScene.h */,
-				9C3D7BED1445031300B210F2 /* AboutScene.m */,
 				DE9517311439F8B20038448F /* Resources */,
-				DE9517451439F8B20038448F /* cocos2d */,
-				DE9518361439F8B40038448F /* CocosDenshion */,
-				DE9518441439F8B40038448F /* cocoslive */,
-				DE95184E1439F8B40038448F /* FontLabel */,
-				DE95185F1439F8B40038448F /* TouchJSON */,
 				DE9518781439F8B40038448F /* Supporting Files */,
 			);
 			path = Says;
@@ -800,6 +786,36 @@
 				DE95187A1439F8B40038448F /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F35E2158144544D300022C85 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				9C562983143A377F00CFCB0D /* GameScene.h */,
+				9C562984143A378000CFCB0D /* GameScene.m */,
+				DE9518851439F8B40038448F /* GameConfig.h */,
+				9C3D7BE21444FF8D00B210F2 /* HowToScene.h */,
+				9C3D7BE31444FF8D00B210F2 /* HowToScene.m */,
+				9C3D7BE61445019C00B210F2 /* TopTenScene.h */,
+				9C3D7BE71445019C00B210F2 /* TopTenScene.m */,
+				9C3D7BE91445023F00B210F2 /* ConfigScene.h */,
+				9C3D7BEA1445023F00B210F2 /* ConfigScene.m */,
+				9C3D7BEC1445031300B210F2 /* AboutScene.h */,
+				9C3D7BED1445031300B210F2 /* AboutScene.m */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		F35E215A144544EF00022C85 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				DE9517451439F8B20038448F /* cocos2d */,
+				DE9518361439F8B40038448F /* CocosDenshion */,
+				DE9518441439F8B40038448F /* cocoslive */,
+				DE95184E1439F8B40038448F /* FontLabel */,
+				DE95185F1439F8B40038448F /* TouchJSON */,
+			);
+			name = Libs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
