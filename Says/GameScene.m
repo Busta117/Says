@@ -8,7 +8,6 @@
 
 #import "GameScene.h"
 
-//Prueba commit de daniel (no le paren bolas, solo es este comentario)
 @implementation GameScene
 
 +(id)scene {
