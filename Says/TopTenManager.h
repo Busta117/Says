@@ -15,25 +15,18 @@ extern NSString* const PATH_PLIST_FILE;
 extern NSString* const DICTIONARY_KEY;
 #endif
 
-
+//Manages the TopTen list
 @interface TopTenManager : NSObject
 
-/*
-    Returns a dictionary with TopTenEntry objects. 
-    The key is the position in the TopTen List and the value is the TopTenEntry
-*/
+// Returns a dictionary with |TopTenEntry| objects. 
+// The key is the position in the TopTen List and the value is the |TopTenEntry|
 -(NSMutableDictionary*) getTopTenList;
 
-/*
-    Returns the TopTenEntry object in the position
-    Returns nil if the position has not been established
-*/
+// Returns the |TopTenEntry| object in the position
+// Returns |nil| if the position has not been established
 -(TopTenEntry*) getTopTenListWithPosition: (NSInteger*) position;
 
-/*
-    Calculate the position in the TopTen list and add to it
-*/
+//Calculate the position in the TopTen list and add to it
 -(void) addTopTenEntry: (TopTenEntry*) entry;
-
 
 @end

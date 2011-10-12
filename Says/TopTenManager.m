@@ -14,9 +14,9 @@
 NSString* const PATH_PLIST_FILE = @"TopTenList.plist";
 NSString* const DICTIONARY_KEY = @"TopTenDictionary";
 
+#pragma mark Initialization
 
-- (id)init
-{
+- (id)init{
     self = [super init];
     if (self) {
     }
@@ -24,6 +24,7 @@ NSString* const DICTIONARY_KEY = @"TopTenDictionary";
     return self;
 }
 
+#pragma mark Managment
 
 -(NSMutableDictionary*) getTopTenList{
     
@@ -39,14 +40,12 @@ NSString* const DICTIONARY_KEY = @"TopTenDictionary";
     return nil;
 }
 
-/*
-    Update the topTenDictionary with the newEntry (search a new position and move the others if it is necessary)
-*/
+//Update the |topTenDictionary| with the |newEntry| (search a new position and move the others if it is necessary)
 -(void) manageNewPosition: (NSMutableDictionary*)topTenDictionary with:(TopTenEntry*) newEntry{
 }
 
-
 -(void) addTopTenEntry: (TopTenEntry*) entry{
+    
     NSMutableDictionary* plistDict = [[NSMutableDictionary alloc] initWithContentsOfFile:PATH_PLIST_FILE];    
     
     NSMutableDictionary *dictionary;

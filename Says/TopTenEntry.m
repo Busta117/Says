@@ -12,6 +12,8 @@
 @synthesize name = _name;
 @synthesize points = _points;
 
+#pragma mark Initialization
+
 - (id)init
 {
     self = [super init];

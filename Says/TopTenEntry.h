@@ -12,6 +12,7 @@
  This class represents an entry for the TopTenManager
  */
 @interface TopTenEntry : NSObject{
+@private
     NSString* _name;
     NSInteger _points;
 }

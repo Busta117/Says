@@ -490,16 +490,9 @@
 		DE9517301439F8B20038448F /* Says */ = {
 			isa = PBXGroup;
 			children = (
+				F34315A21445F35E00FE4012 /* Classes */,
 				F3F6CF3914456EB6003C1C1C /* Supporting Files */,
-				F365790D144552C5003842F0 /* Model */,
 				F35E215A144544EF00022C85 /* Libs */,
-				F35E2158144544D300022C85 /* Scenes */,
-				DE95187C1439F8B40038448F /* AppDelegate.h */,
-				DE95187D1439F8B40038448F /* AppDelegate.m */,
-				9C562975143A28BB00CFCB0D /* MenuLayer.h */,
-				9C562976143A28BB00CFCB0D /* MenuLayer.m */,
-				DE95187F1439F8B40038448F /* RootViewController.h */,
-				DE9518801439F8B40038448F /* RootViewController.m */,
 				DE9517311439F8B20038448F /* Resources */,
 			);
 			path = Says;
@@ -787,6 +780,21 @@
 				DE9518761439F8B40038448F /* CJSONSerializer.m */,
 			);
 			name = TouchJSON;
+			sourceTree = "<group>";
+		};
+		F34315A21445F35E00FE4012 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F365790D144552C5003842F0 /* Model */,
+				F35E2158144544D300022C85 /* Scenes */,
+				DE95187C1439F8B40038448F /* AppDelegate.h */,
+				DE95187D1439F8B40038448F /* AppDelegate.m */,
+				9C562975143A28BB00CFCB0D /* MenuLayer.h */,
+				9C562976143A28BB00CFCB0D /* MenuLayer.m */,
+				DE95187F1439F8B40038448F /* RootViewController.h */,
+				DE9518801439F8B40038448F /* RootViewController.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		F35E2158144544D300022C85 /* Scenes */ = {
