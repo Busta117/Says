@@ -12,6 +12,7 @@
 #import "TopTenScene.h"
 #import "ConfigScene.h"
 #import "AboutScene.h"
+//#import "TopTenManager.h"
 
 @interface MenuLayer (privateMethods)
 -(void)menuPlayBtnTouched: (id)sender;
@@ -117,6 +118,11 @@
         CCMenu* menu = [CCMenu menuWithItems:btnPlay, btnHowTo, btnTopTen, btnConfig, btnAbout, nil];
         menu.position = CGPointMake(0.0f, 0.0f);
         [self addChild:menu];
+        
+        
+        /*TopTenManager* topTenMan;
+        topTenMan = [TopTenManager new];
+        [topTenMan addTopTenEntry:[[TopTenEntry new] initWithName:@"aaaa" andPoints:2]];*/
     }
     return self;
 }

@@ -151,9 +151,12 @@
 		DE9518711439F8B40038448F /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9518701439F8B40038448F /* CJSONDeserializer.m */; };
 		DE9518741439F8B40038448F /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9518731439F8B40038448F /* CJSONScanner.m */; };
 		DE9518771439F8B40038448F /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9518761439F8B40038448F /* CJSONSerializer.m */; };
-		DE95187B1439F8B40038448F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE95187A1439F8B40038448F /* main.m */; };
 		DE95187E1439F8B40038448F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE95187D1439F8B40038448F /* AppDelegate.m */; };
 		DE9518811439F8B40038448F /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9518801439F8B40038448F /* RootViewController.m */; };
+		F35E21601445483800022C85 /* TopTenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F35E215F1445483800022C85 /* TopTenManager.m */; };
+		F3F6CF3114456B77003C1C1C /* TopTenList.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3F6CF3014456B77003C1C1C /* TopTenList.plist */; };
+		F3F6CF3414456D74003C1C1C /* TopTenEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F6CF3314456D74003C1C1C /* TopTenEntry.m */; };
+		F3F6CF3C14456ED2003C1C1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F6CF3A14456ED2003C1C1C /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -419,13 +422,18 @@
 		DE9518731439F8B40038448F /* CJSONScanner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CJSONScanner.m; path = libs/TouchJSON/JSON/CJSONScanner.m; sourceTree = "<group>"; };
 		DE9518751439F8B40038448F /* CJSONSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CJSONSerializer.h; path = libs/TouchJSON/JSON/CJSONSerializer.h; sourceTree = "<group>"; };
 		DE9518761439F8B40038448F /* CJSONSerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CJSONSerializer.m; path = libs/TouchJSON/JSON/CJSONSerializer.m; sourceTree = "<group>"; };
-		DE9518791439F8B40038448F /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
-		DE95187A1439F8B40038448F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DE95187C1439F8B40038448F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DE95187D1439F8B40038448F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DE95187F1439F8B40038448F /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		DE9518801439F8B40038448F /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		DE9518851439F8B40038448F /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
+		F35E215E1445483800022C85 /* TopTenManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopTenManager.h; sourceTree = "<group>"; };
+		F35E215F1445483800022C85 /* TopTenManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopTenManager.m; sourceTree = "<group>"; };
+		F3F6CF3014456B77003C1C1C /* TopTenList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TopTenList.plist; sourceTree = "<group>"; };
+		F3F6CF3214456D74003C1C1C /* TopTenEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopTenEntry.h; sourceTree = "<group>"; };
+		F3F6CF3314456D74003C1C1C /* TopTenEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopTenEntry.m; sourceTree = "<group>"; };
+		F3F6CF3A14456ED2003C1C1C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F3F6CF3B14456ED2003C1C1C /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -482,6 +490,8 @@
 		DE9517301439F8B20038448F /* Says */ = {
 			isa = PBXGroup;
 			children = (
+				F3F6CF3914456EB6003C1C1C /* Supporting Files */,
+				F365790D144552C5003842F0 /* Model */,
 				F35E215A144544EF00022C85 /* Libs */,
 				F35E2158144544D300022C85 /* Scenes */,
 				DE95187C1439F8B40038448F /* AppDelegate.h */,
@@ -491,7 +501,6 @@
 				DE95187F1439F8B40038448F /* RootViewController.h */,
 				DE9518801439F8B40038448F /* RootViewController.m */,
 				DE9517311439F8B20038448F /* Resources */,
-				DE9518781439F8B40038448F /* Supporting Files */,
 			);
 			path = Says;
 			sourceTree = "<group>";
@@ -534,6 +543,7 @@
 				DE9517401439F8B20038448F /* Icon@2x.png */,
 				DE9517421439F8B20038448F /* Info.plist */,
 				DE9517431439F8B20038448F /* iTunesArtwork */,
+				F3F6CF3014456B77003C1C1C /* TopTenList.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -779,15 +789,6 @@
 			name = TouchJSON;
 			sourceTree = "<group>";
 		};
-		DE9518781439F8B40038448F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				DE9518791439F8B40038448F /* Prefix.pch */,
-				DE95187A1439F8B40038448F /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		F35E2158144544D300022C85 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -816,6 +817,26 @@
 				DE95185F1439F8B40038448F /* TouchJSON */,
 			);
 			name = Libs;
+			sourceTree = "<group>";
+		};
+		F365790D144552C5003842F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F35E215E1445483800022C85 /* TopTenManager.h */,
+				F35E215F1445483800022C85 /* TopTenManager.m */,
+				F3F6CF3214456D74003C1C1C /* TopTenEntry.h */,
+				F3F6CF3314456D74003C1C1C /* TopTenEntry.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F3F6CF3914456EB6003C1C1C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F3F6CF3A14456ED2003C1C1C /* main.m */,
+				F3F6CF3B14456ED2003C1C1C /* Prefix.pch */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -899,6 +920,7 @@
 				52735F0B143D683500AA96A0 /* menu_agua.png in Resources */,
 				52735F0E143D6ADA00AA96A0 /* menu_cafe_dwn.png in Resources */,
 				52735F0F143D6ADA00AA96A0 /* menu_cafe.png in Resources */,
+				F3F6CF3114456B77003C1C1C /* TopTenList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1005,7 +1027,6 @@
 				DE9518711439F8B40038448F /* CJSONDeserializer.m in Sources */,
 				DE9518741439F8B40038448F /* CJSONScanner.m in Sources */,
 				DE9518771439F8B40038448F /* CJSONSerializer.m in Sources */,
-				DE95187B1439F8B40038448F /* main.m in Sources */,
 				DE95187E1439F8B40038448F /* AppDelegate.m in Sources */,
 				DE9518811439F8B40038448F /* RootViewController.m in Sources */,
 				9C562977143A28BB00CFCB0D /* MenuLayer.m in Sources */,
@@ -1014,6 +1035,9 @@
 				9C3D7BE81445019C00B210F2 /* TopTenScene.m in Sources */,
 				9C3D7BEB1445023F00B210F2 /* ConfigScene.m in Sources */,
 				9C3D7BEE1445031300B210F2 /* AboutScene.m in Sources */,
+				F35E21601445483800022C85 /* TopTenManager.m in Sources */,
+				F3F6CF3414456D74003C1C1C /* TopTenEntry.m in Sources */,
+				F3F6CF3C14456ED2003C1C1C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

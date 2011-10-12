@@ -1,8 +1,8 @@
 //
 //  main.m
-//  Says
+//  CatapultGame (first try Cocos2d)
 //
-//  Created by Santiago on 3/10/11.
+//  Created by Daniel  Gomez Rico on 4/10/11.
 //  Copyright __MyCompanyName__ 2011. All rights reserved.
 //
 
