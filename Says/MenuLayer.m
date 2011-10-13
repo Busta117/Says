@@ -12,7 +12,7 @@
 #import "TopTenScene.h"
 #import "ConfigScene.h"
 #import "AboutScene.h"
-//#import "TopTenManager.h"
+#import "TopTenManager.h"
 
 @interface MenuLayer (privateMethods)
 -(void)menuPlayBtnTouched: (id)sender;
@@ -120,9 +120,11 @@
         [self addChild:menu];
         
         
-        /*TopTenManager* topTenMan;
+        TopTenManager* topTenMan;
         topTenMan = [TopTenManager new];
-        [topTenMan addTopTenEntry:[[TopTenEntry new] initWithName:@"aaaa" andPoints:2]];*/
+        [topTenMan addTopTenEntry:[[TopTenEntry new] initWithName:@"aaaa" andPoints:2]];
+        
+        NSMutableDictionary* dict = [topTenMan getTopTenList];
     }
     return self;
 }

@@ -22,5 +22,9 @@
 
 -(id)initWithName: (NSString *)inName andPoints:(NSInteger)inPoints;
 
+//Used to save the object values in a Plist
+-(NSMutableDictionary*) castToDictionary;
++(TopTenEntry*) castToEntryFromDictionary:(NSMutableDictionary*)dictionary;
+
 
 @end

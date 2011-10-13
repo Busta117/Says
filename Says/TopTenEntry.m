@@ -12,6 +12,7 @@
 @synthesize name = _name;
 @synthesize points = _points;
 
+#pragma mark -
 #pragma mark Initialization
 
 - (id)init
@@ -33,4 +34,21 @@
     }
     return self;
 }
+
+#pragma mark -
+#pragma mark Castings
+
+-(NSMutableDictionary*) castToDictionary{
+    NSMutableDictionary* dictionary = [[NSMutableDictionary alloc] initWithCapacity:1];
+    [dictionary setObject:[self name] forKey:@"name"];
+    [dictionary setObject:[NSNumber numberWithInteger:[self points]] forKey:@"points"];
+    return dictionary;
+}
+
++(TopTenEntry*) castToEntryFromDictionary:(NSMutableDictionary*)dictionary{
+    return [[TopTenEntry alloc] initWithName:[dictionary objectForKey:@"name"] 
+                                   andPoints:[[dictionary objectForKey:@"points"] intValue]];
+}
+
 @end
+

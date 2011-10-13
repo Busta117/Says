@@ -8,12 +8,13 @@
 
 #import "TopTenManager.h"
 
+#define PLIST_FILE @"PLIST_TopTen.plist"
+#define DICTIONARY_KEY @"TopTenDictionary" //puede ser de cualquier tipo de numero(int, float, double)
+
 @implementation TopTenManager
 
 
-NSString* const PATH_PLIST_FILE = @"TopTenList.plist";
-NSString* const DICTIONARY_KEY = @"TopTenDictionary";
-
+#pragma mark -
 #pragma mark Initialization
 
 - (id)init{
@@ -24,49 +25,86 @@ NSString* const DICTIONARY_KEY = @"TopTenDictionary";
     return self;
 }
 
+-(NSString*) getPathPlist{
+    NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    return [rootPath stringByAppendingPathComponent:PLIST_FILE];
+}
+
+#pragma mark -
 #pragma mark Managment
 
 -(NSMutableDictionary*) getTopTenList{
     
-    NSMutableDictionary* plistDict = [[NSMutableDictionary alloc] initWithContentsOfFile:PATH_PLIST_FILE];
-
-    NSMutableDictionary *dictionary;
-    dictionary = [plistDict objectForKey:DICTIONARY_KEY];
+    NSMutableDictionary* dictUnserialized = [[NSMutableDictionary alloc] initWithContentsOfFile: [self getPathPlist]];
+    NSMutableDictionary* dictSerialized = [[NSMutableDictionary alloc] initWithCapacity:[dictUnserialized count]];
     
-    return dictionary;
-}
-
--(TopTenEntry*) getTopTenListWithPosition: (NSInteger*) position{
-    return nil;
+    if(!dictUnserialized){//If is Nil initialize a new one
+        dictUnserialized = [[NSMutableDictionary alloc] init];
+    }
+    
+    //Unserialize the entries
+    for (id key in dictUnserialized){
+        TopTenEntry* entry = [TopTenEntry castToEntryFromDictionary:[dictUnserialized objectForKey:key]];
+        [dictSerialized setObject:entry forKey:key];
+    }
+    
+    return dictSerialized;
 }
 
 //Update the |topTenDictionary| with the |newEntry| (search a new position and move the others if it is necessary)
--(void) manageNewPosition: (NSMutableDictionary*)topTenDictionary with:(TopTenEntry*) newEntry{
+-(void) update: (NSMutableDictionary*)topTenDictionary withEntry:(TopTenEntry*) newEntry{
+    /*NSMutableDictionary* newTopTen = [[NSMutableDictionary alloc] initWithCapacity:[topTenDictionary count]];
+    int countTopTenEntries = [topTenDictionary count];
+    int keyNewEntry = countTopTenEntries;
+    
+    for (id key in topTenDictionary){
+        
+        TopTenEntry* temp = [topTenDictionary objectForKey:key];
+        
+        if( [temp points] < [newEntry points] ){
+            
+            int tempKey = [[key value] intValue];
+            
+            if (keyNewEntry > tempKey) {
+                keyNewEntry = tempKey;
+            }
+            
+            if(tempKey <= countTopTenEntries - 1){ //This one is eliminated from the list, is the number 0
+                [newTopTen setObject:temp forKey: [NSNumber numberWithInt:tempKey+1]];
+            }
+            
+
+        }
+        
+    }*/
 }
 
 -(void) addTopTenEntry: (TopTenEntry*) entry{
+    NSString* error;
+    NSString* pathPList = [self getPathPlist];
     
-    NSMutableDictionary* plistDict = [[NSMutableDictionary alloc] initWithContentsOfFile:PATH_PLIST_FILE];    
+    NSMutableDictionary *topTen= [self getTopTenList];
     
-    NSMutableDictionary *dictionary;
-    dictionary = [self getTopTenList];
+    //Updates the dictionary
+    [self update:topTen withEntry:entry];
     
-    if(!dictionary){//If is Nil initialize a new one
-        dictionary = [[NSMutableDictionary alloc] initWithCapacity:1];
+//    Debugg
+//    [dictionary setObject:[[[TopTenEntry new] initWithName:@"juan" andPoints:2] castToDictionary] forKey:@"4"];
+//    [dictionary setObject:[[[TopTenEntry new] initWithName:@"pedro" andPoints:3] castToDictionary] forKey:@"2"];
+//    [dictionary setObject:[[[TopTenEntry new] initWithName:@"jose" andPoints:4] castToDictionary] forKey:@"5"];
+//    
+    //Try to write in plist the new data
+    NSData *plistData = [NSPropertyListSerialization dataFromPropertyList: topTen
+                                                    format:NSPropertyListXMLFormat_v1_0  errorDescription:&error];
+    if(plistData) {
+        [plistData writeToFile:pathPList atomically:YES];
+    }
+    else {
+        NSLog(@"Error : %@",error);
+        [error release];
     }
     
-    [dictionary setObject:[[TopTenEntry new] initWithName:@"juan" andPoints:2] forKey:@"4"];
-    [dictionary setObject:[[TopTenEntry new] initWithName:@"pedro" andPoints:4] forKey:@"3"];
-    [dictionary setObject:[[TopTenEntry new] initWithName:@"carlos" andPoints:7] forKey:@"2"];
-    [dictionary setObject:[[TopTenEntry new] initWithName:@"don" andPoints:10] forKey:@"1"];
-
-    
-    //[self manageNewPosition:dictionary with:entry];
-    
-    [plistDict setValue:dictionary forKey:DICTIONARY_KEY];
-    [plistDict writeToFile:PATH_PLIST_FILE atomically: YES];
-    
-    [dictionary dealloc];
+    [topTen dealloc];
 }
 
 
