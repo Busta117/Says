@@ -9,7 +9,8 @@
 #import "TopTenManager.h"
 
 #define PLIST_FILE @"PLIST_TopTen.plist"
-#define DICTIONARY_KEY @"TopTenDictionary" //puede ser de cualquier tipo de numero(int, float, double)
+#define DICTIONARY_KEY @"TopTenDictionary"
+#define MAX_TOP_TEN_ENTRIES 10 //Defines the max number of top ten entries
 
 @implementation TopTenManager
 
@@ -25,22 +26,16 @@
     return self;
 }
 
--(NSString*) getPathPlist{
-    NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    return [rootPath stringByAppendingPathComponent:PLIST_FILE];
-}
-
 #pragma mark -
 #pragma mark Managment
 
 -(NSMutableDictionary*) getTopTenList{
-    
-    NSMutableDictionary* dictUnserialized = [[NSMutableDictionary alloc] initWithContentsOfFile: [self getPathPlist]];
+    NSMutableDictionary* dictUnserialized = [PlistManager getPlistDictionary:PLIST_FILE];
     NSMutableDictionary* dictSerialized = [[NSMutableDictionary alloc] initWithCapacity:[dictUnserialized count]];
     
-    if(!dictUnserialized){//If is Nil initialize a new one
-        dictUnserialized = [[NSMutableDictionary alloc] init];
-    }
+//    if(!dictUnserialized){//If is Nil initialize a new one
+//        dictUnserialized = [[NSMutableDictionary alloc] init];
+//    }
     
     //Unserialize the entries
     for (id key in dictUnserialized){
@@ -48,65 +43,74 @@
         [dictSerialized setObject:entry forKey:key];
     }
     
+    [dictUnserialized dealloc];
+    
     return dictSerialized;
 }
 
 //Update the |topTenDictionary| with the |newEntry| (search a new position and move the others if it is necessary)
--(void) update: (NSMutableDictionary*)topTenDictionary withEntry:(TopTenEntry*) newEntry{
-    /*NSMutableDictionary* newTopTen = [[NSMutableDictionary alloc] initWithCapacity:[topTenDictionary count]];
-    int countTopTenEntries = [topTenDictionary count];
-    int keyNewEntry = countTopTenEntries;
+-(void) update: (NSMutableDictionary*)topTen withEntry:(TopTenEntry*) newEntry{
+    NSMutableDictionary* newTopTen = [NSMutableDictionary new];
+    int lastPosition = -1, leftEntries = 0;
+    bool newEntryAdded = false;
     
-    for (id key in topTenDictionary){
-        
-        TopTenEntry* temp = [topTenDictionary objectForKey:key];
-        
-        if( [temp points] < [newEntry points] ){
-            
-            int tempKey = [[key value] intValue];
-            
-            if (keyNewEntry > tempKey) {
-                keyNewEntry = tempKey;
-            }
-            
-            if(tempKey <= countTopTenEntries - 1){ //This one is eliminated from the list, is the number 0
-                [newTopTen setObject:temp forKey: [NSNumber numberWithInt:tempKey+1]];
-            }
-            
+    //Search the position for the new entry while it adds the entries (that have more points that the new) to the newTopTenDictionary
+    for (int i = 0; i < [topTen count] ; i++) {
+        TopTenEntry* entryTemp = [topTen objectForKey:[CastManager toString:i]];
+        lastPosition = i;
 
+        if( [entryTemp points] < [newEntry points] ){//If the new entry have more points
+            
+            [newTopTen setObject:newEntry forKey:[CastManager toString:i]];
+            newEntryAdded = true;
+            break;
+            
+        }else{
+            [newTopTen setObject:entryTemp forKey:[CastManager toString:i]];
         }
+    }
+    
+    // Is becouse there are left entries to add to the newTopTenD
+    if(newEntryAdded){ 
+        //How many entries left in the newTopTenDictionary
+        leftEntries = [topTen count] - lastPosition;
         
-    }*/
+        //Add the left entries to the newTopTenDiciontary with her keys updated
+        for (int i = lastPosition; i < leftEntries; i++) {
+            [newTopTen setObject:[topTen objectForKey:[CastManager toString:i]] forKey:[CastManager toString:i+1]];
+            
+            //The rest must be forgiven becouse the TopTen is fully
+            if([newTopTen count] == MAX_TOP_TEN_ENTRIES){
+                break;
+            }
+        }
+    }else{
+        [newTopTen setObject:newEntry forKey:[CastManager toString:lastPosition+1]];
+    }
+    
+    //Free memory and sets the new value
+    [topTen removeAllObjects];
+    [topTen addEntriesFromDictionary:newTopTen];
+    //topTen = [newTopTen copy];
+    //[newTopTen dealloc];
+    
 }
 
 -(void) addTopTenEntry: (TopTenEntry*) entry{
-    NSString* error;
-    NSString* pathPList = [self getPathPlist];
-    
     NSMutableDictionary *topTen= [self getTopTenList];
-    
+
     //Updates the dictionary
     [self update:topTen withEntry:entry];
-    
-//    Debugg
-//    [dictionary setObject:[[[TopTenEntry new] initWithName:@"juan" andPoints:2] castToDictionary] forKey:@"4"];
-//    [dictionary setObject:[[[TopTenEntry new] initWithName:@"pedro" andPoints:3] castToDictionary] forKey:@"2"];
-//    [dictionary setObject:[[[TopTenEntry new] initWithName:@"jose" andPoints:4] castToDictionary] forKey:@"5"];
-//    
+        
     //Try to write in plist the new data
-    NSData *plistData = [NSPropertyListSerialization dataFromPropertyList: topTen
-                                                    format:NSPropertyListXMLFormat_v1_0  errorDescription:&error];
-    if(plistData) {
-        [plistData writeToFile:pathPList atomically:YES];
-    }
-    else {
-        NSLog(@"Error : %@",error);
-        [error release];
-    }
+    [PlistManager saveToPlist: [TopTenEntry castToDictionaryOfDictionaries:topTen] in:PLIST_FILE];
     
     [topTen dealloc];
 }
 
+-(void) clearTopTen{
+    [PlistManager saveToPlist:[NSMutableDictionary new] in:PLIST_FILE];
+}
 
 
 @end

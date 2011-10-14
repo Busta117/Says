@@ -38,14 +38,28 @@
 #pragma mark -
 #pragma mark Castings
 
--(NSMutableDictionary*) castToDictionary{
++(NSMutableDictionary*) castToDictionary:(TopTenEntry*)topTenEntry
+{
     NSMutableDictionary* dictionary = [[NSMutableDictionary alloc] initWithCapacity:1];
-    [dictionary setObject:[self name] forKey:@"name"];
-    [dictionary setObject:[NSNumber numberWithInteger:[self points]] forKey:@"points"];
+    [dictionary setObject:[topTenEntry name] forKey:@"name"];
+    [dictionary setObject:[NSNumber numberWithInteger:[topTenEntry points]] forKey:@"points"];
     return dictionary;
 }
 
-+(TopTenEntry*) castToEntryFromDictionary:(NSMutableDictionary*)dictionary{
++(NSMutableDictionary*) castToDictionaryOfDictionaries:(NSMutableDictionary*)dictionaryTopTen
+{    
+    NSMutableDictionary* dictionaryOfDictionaries = [[NSMutableDictionary alloc] initWithCapacity:[dictionaryTopTen count]];
+    
+    for (id key in dictionaryTopTen) {
+        TopTenEntry* entry = [dictionaryTopTen objectForKey:key];
+        [dictionaryOfDictionaries setObject:[TopTenEntry castToDictionary:entry] forKey:key];
+    }
+
+    return dictionaryOfDictionaries;
+}
+
++(TopTenEntry*) castToEntryFromDictionary:(NSMutableDictionary*)dictionary
+{
     return [[TopTenEntry alloc] initWithName:[dictionary objectForKey:@"name"] 
                                    andPoints:[[dictionary objectForKey:@"points"] intValue]];
 }

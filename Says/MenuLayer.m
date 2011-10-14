@@ -122,9 +122,21 @@
         
         TopTenManager* topTenMan;
         topTenMan = [TopTenManager new];
+        [topTenMan clearTopTen];
         [topTenMan addTopTenEntry:[[TopTenEntry new] initWithName:@"aaaa" andPoints:2]];
+        [topTenMan addTopTenEntry:[[TopTenEntry new] initWithName:@"bbbb" andPoints:3]];
+        [topTenMan addTopTenEntry:[[TopTenEntry new] initWithName:@"cccc" andPoints:1]];
+
         
         NSMutableDictionary* dict = [topTenMan getTopTenList];
+        for (id key in dict) {
+
+            //NSLog([key stringValue]);
+            TopTenEntry* entry = [dict objectForKey:key];
+            
+            NSLog(@"%d %d %@", [key intValue],  [entry points], [entry name]);
+        }
+        int a = 0;
     }
     return self;
 }

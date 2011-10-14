@@ -154,6 +154,8 @@
 		DE95187E1439F8B40038448F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE95187D1439F8B40038448F /* AppDelegate.m */; };
 		DE9518811439F8B40038448F /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9518801439F8B40038448F /* RootViewController.m */; };
 		F35E21601445483800022C85 /* TopTenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F35E215F1445483800022C85 /* TopTenManager.m */; };
+		F3B45F2714479DA90005C044 /* PlistManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B45F2614479DA90005C044 /* PlistManager.m */; };
+		F3B45F2B1447D9890005C044 /* CastManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B45F2A1447D9890005C044 /* CastManager.m */; };
 		F3F6CF3114456B77003C1C1C /* TopTenList.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3F6CF3014456B77003C1C1C /* TopTenList.plist */; };
 		F3F6CF3414456D74003C1C1C /* TopTenEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F6CF3314456D74003C1C1C /* TopTenEntry.m */; };
 		F3F6CF3C14456ED2003C1C1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F6CF3A14456ED2003C1C1C /* main.m */; };
@@ -429,6 +431,10 @@
 		DE9518851439F8B40038448F /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 		F35E215E1445483800022C85 /* TopTenManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopTenManager.h; sourceTree = "<group>"; };
 		F35E215F1445483800022C85 /* TopTenManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopTenManager.m; sourceTree = "<group>"; };
+		F3B45F2514479DA90005C044 /* PlistManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlistManager.h; sourceTree = "<group>"; };
+		F3B45F2614479DA90005C044 /* PlistManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlistManager.m; sourceTree = "<group>"; };
+		F3B45F291447D9890005C044 /* CastManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CastManager.h; sourceTree = "<group>"; };
+		F3B45F2A1447D9890005C044 /* CastManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CastManager.m; sourceTree = "<group>"; };
 		F3F6CF3014456B77003C1C1C /* TopTenList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TopTenList.plist; sourceTree = "<group>"; };
 		F3F6CF3214456D74003C1C1C /* TopTenEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopTenEntry.h; sourceTree = "<group>"; };
 		F3F6CF3314456D74003C1C1C /* TopTenEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopTenEntry.m; sourceTree = "<group>"; };
@@ -830,12 +836,32 @@
 		F365790D144552C5003842F0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F3B45F2D1447E3110005C044 /* Managers */,
+				F3B45F2C1447E3010005C044 /* TopTen */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F3B45F2C1447E3010005C044 /* TopTen */ = {
+			isa = PBXGroup;
+			children = (
 				F35E215E1445483800022C85 /* TopTenManager.h */,
 				F35E215F1445483800022C85 /* TopTenManager.m */,
 				F3F6CF3214456D74003C1C1C /* TopTenEntry.h */,
 				F3F6CF3314456D74003C1C1C /* TopTenEntry.m */,
 			);
-			name = Model;
+			name = TopTen;
+			sourceTree = "<group>";
+		};
+		F3B45F2D1447E3110005C044 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F3B45F2514479DA90005C044 /* PlistManager.h */,
+				F3B45F2614479DA90005C044 /* PlistManager.m */,
+				F3B45F291447D9890005C044 /* CastManager.h */,
+				F3B45F2A1447D9890005C044 /* CastManager.m */,
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 		F3F6CF3914456EB6003C1C1C /* Supporting Files */ = {
@@ -1046,6 +1072,8 @@
 				F35E21601445483800022C85 /* TopTenManager.m in Sources */,
 				F3F6CF3414456D74003C1C1C /* TopTenEntry.m in Sources */,
 				F3F6CF3C14456ED2003C1C1C /* main.m in Sources */,
+				F3B45F2714479DA90005C044 /* PlistManager.m in Sources */,
+				F3B45F2B1447D9890005C044 /* CastManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
