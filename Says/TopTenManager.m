@@ -18,7 +18,8 @@
 #pragma mark -
 #pragma mark Initialization
 
-- (id)init{
++ (id)init
+{
     self = [super init];
     if (self) {
     }
@@ -29,13 +30,10 @@
 #pragma mark -
 #pragma mark Managment
 
--(NSMutableDictionary*) getTopTenList{
-    NSMutableDictionary* dictUnserialized = [PlistManager getPlistDictionary:PLIST_FILE];
++(NSMutableDictionary*) getTopTenList
+{
+    NSMutableDictionary* dictUnserialized = [PlistHelper getPlistDictionary:PLIST_FILE];
     NSMutableDictionary* dictSerialized = [[NSMutableDictionary alloc] initWithCapacity:[dictUnserialized count]];
-    
-//    if(!dictUnserialized){//If is Nil initialize a new one
-//        dictUnserialized = [[NSMutableDictionary alloc] init];
-//    }
     
     //Unserialize the entries
     for (id key in dictUnserialized){
@@ -43,30 +41,31 @@
         [dictSerialized setObject:entry forKey:key];
     }
     
-    [dictUnserialized dealloc];
+    [dictUnserialized release];
     
     return dictSerialized;
 }
 
 //Update the |topTenDictionary| with the |newEntry| (search a new position and move the others if it is necessary)
--(void) update: (NSMutableDictionary*)topTen withEntry:(TopTenEntry*) newEntry{
++(void) update: (NSMutableDictionary*)topTen withEntry:(TopTenEntry*) newEntry
+{
     NSMutableDictionary* newTopTen = [NSMutableDictionary new];
     int lastPosition = -1, leftEntries = 0;
     bool newEntryAdded = false;
     
     //Search the position for the new entry while it adds the entries (that have more points that the new) to the newTopTenDictionary
     for (int i = 0; i < [topTen count] ; i++) {
-        TopTenEntry* entryTemp = [topTen objectForKey:[CastManager toString:i]];
+        TopTenEntry* entryTemp = [topTen objectForKey:[CastHelper toString:i]];
         lastPosition = i;
 
         if( [entryTemp points] < [newEntry points] ){//If the new entry have more points
             
-            [newTopTen setObject:newEntry forKey:[CastManager toString:i]];
+            [newTopTen setObject:newEntry forKey:[CastHelper toString:i]];
             newEntryAdded = true;
             break;
             
         }else{
-            [newTopTen setObject:entryTemp forKey:[CastManager toString:i]];
+            [newTopTen setObject:entryTemp forKey:[CastHelper toString:i]];
         }
     }
     
@@ -77,7 +76,7 @@
         
         //Add the left entries to the newTopTenDiciontary with her keys updated
         for (int i = lastPosition; i < leftEntries; i++) {
-            [newTopTen setObject:[topTen objectForKey:[CastManager toString:i]] forKey:[CastManager toString:i+1]];
+            [newTopTen setObject:[topTen objectForKey:[CastHelper toString:i]] forKey:[CastHelper toString:i+1]];
             
             //The rest must be forgiven becouse the TopTen is fully
             if([newTopTen count] == MAX_TOP_TEN_ENTRIES){
@@ -85,31 +84,31 @@
             }
         }
     }else{
-        [newTopTen setObject:newEntry forKey:[CastManager toString:lastPosition+1]];
+        [newTopTen setObject:newEntry forKey:[CastHelper toString:lastPosition+1]];
     }
     
     //Free memory and sets the new value
     [topTen removeAllObjects];
     [topTen addEntriesFromDictionary:newTopTen];
-    //topTen = [newTopTen copy];
-    //[newTopTen dealloc];
-    
+    [newTopTen release];
 }
 
--(void) addTopTenEntry: (TopTenEntry*) entry{
++(void) addTopTenEntry: (TopTenEntry*) entry
+{
     NSMutableDictionary *topTen= [self getTopTenList];
 
     //Updates the dictionary
-    [self update:topTen withEntry:entry];
+    [TopTenManager update:topTen withEntry:entry];
         
     //Try to write in plist the new data
-    [PlistManager saveToPlist: [TopTenEntry castToDictionaryOfDictionaries:topTen] in:PLIST_FILE];
+    [PlistHelper saveToPlist: [TopTenEntry castToDictionaryOfDictionaries:topTen] in:PLIST_FILE];
     
-    [topTen dealloc];
+    [topTen release];
 }
 
--(void) clearTopTen{
-    [PlistManager saveToPlist:[NSMutableDictionary new] in:PLIST_FILE];
++(void) clearTopTen
+{
+    [PlistHelper saveToPlist:[NSMutableDictionary new] in:PLIST_FILE];
 }
 
 

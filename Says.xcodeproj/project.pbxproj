@@ -154,8 +154,9 @@
 		DE95187E1439F8B40038448F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE95187D1439F8B40038448F /* AppDelegate.m */; };
 		DE9518811439F8B40038448F /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9518801439F8B40038448F /* RootViewController.m */; };
 		F35E21601445483800022C85 /* TopTenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F35E215F1445483800022C85 /* TopTenManager.m */; };
-		F3B45F2714479DA90005C044 /* PlistManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B45F2614479DA90005C044 /* PlistManager.m */; };
-		F3B45F2B1447D9890005C044 /* CastManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B45F2A1447D9890005C044 /* CastManager.m */; };
+		F3B45F2714479DA90005C044 /* PlistHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B45F2614479DA90005C044 /* PlistHelper.m */; };
+		F3B45F2B1447D9890005C044 /* CastHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B45F2A1447D9890005C044 /* CastHelper.m */; };
+		F3B45F2F144802AB0005C044 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = F3B45F2E144802AB0005C044 /* back.png */; };
 		F3F6CF3114456B77003C1C1C /* TopTenList.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3F6CF3014456B77003C1C1C /* TopTenList.plist */; };
 		F3F6CF3414456D74003C1C1C /* TopTenEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F6CF3314456D74003C1C1C /* TopTenEntry.m */; };
 		F3F6CF3C14456ED2003C1C1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F6CF3A14456ED2003C1C1C /* main.m */; };
@@ -431,10 +432,11 @@
 		DE9518851439F8B40038448F /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 		F35E215E1445483800022C85 /* TopTenManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopTenManager.h; sourceTree = "<group>"; };
 		F35E215F1445483800022C85 /* TopTenManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopTenManager.m; sourceTree = "<group>"; };
-		F3B45F2514479DA90005C044 /* PlistManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlistManager.h; sourceTree = "<group>"; };
-		F3B45F2614479DA90005C044 /* PlistManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlistManager.m; sourceTree = "<group>"; };
-		F3B45F291447D9890005C044 /* CastManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CastManager.h; sourceTree = "<group>"; };
-		F3B45F2A1447D9890005C044 /* CastManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CastManager.m; sourceTree = "<group>"; };
+		F3B45F2514479DA90005C044 /* PlistHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlistHelper.h; sourceTree = "<group>"; };
+		F3B45F2614479DA90005C044 /* PlistHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlistHelper.m; sourceTree = "<group>"; };
+		F3B45F291447D9890005C044 /* CastHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CastHelper.h; sourceTree = "<group>"; };
+		F3B45F2A1447D9890005C044 /* CastHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CastHelper.m; sourceTree = "<group>"; };
+		F3B45F2E144802AB0005C044 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		F3F6CF3014456B77003C1C1C /* TopTenList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TopTenList.plist; sourceTree = "<group>"; };
 		F3F6CF3214456D74003C1C1C /* TopTenEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopTenEntry.h; sourceTree = "<group>"; };
 		F3F6CF3314456D74003C1C1C /* TopTenEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopTenEntry.m; sourceTree = "<group>"; };
@@ -507,6 +509,7 @@
 		DE9517311439F8B20038448F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F3B45F2E144802AB0005C044 /* back.png */,
 				52735EDE143D677800AA96A0 /* agua_dwn.png */,
 				52735F08143D683500AA96A0 /* menu_agua_dwn.png */,
 				52735F09143D683500AA96A0 /* menu_agua.png */,
@@ -836,7 +839,7 @@
 		F365790D144552C5003842F0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F3B45F2D1447E3110005C044 /* Managers */,
+				F3B45F2D1447E3110005C044 /* Helpers */,
 				F3B45F2C1447E3010005C044 /* TopTen */,
 			);
 			name = Model;
@@ -853,15 +856,15 @@
 			name = TopTen;
 			sourceTree = "<group>";
 		};
-		F3B45F2D1447E3110005C044 /* Managers */ = {
+		F3B45F2D1447E3110005C044 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				F3B45F2514479DA90005C044 /* PlistManager.h */,
-				F3B45F2614479DA90005C044 /* PlistManager.m */,
-				F3B45F291447D9890005C044 /* CastManager.h */,
-				F3B45F2A1447D9890005C044 /* CastManager.m */,
+				F3B45F2514479DA90005C044 /* PlistHelper.h */,
+				F3B45F2614479DA90005C044 /* PlistHelper.m */,
+				F3B45F291447D9890005C044 /* CastHelper.h */,
+				F3B45F2A1447D9890005C044 /* CastHelper.m */,
 			);
-			name = Managers;
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		F3F6CF3914456EB6003C1C1C /* Supporting Files */ = {
@@ -955,6 +958,7 @@
 				52735F0E143D6ADA00AA96A0 /* menu_cafe_dwn.png in Resources */,
 				52735F0F143D6ADA00AA96A0 /* menu_cafe.png in Resources */,
 				F3F6CF3114456B77003C1C1C /* TopTenList.plist in Resources */,
+				F3B45F2F144802AB0005C044 /* back.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1072,8 +1076,8 @@
 				F35E21601445483800022C85 /* TopTenManager.m in Sources */,
 				F3F6CF3414456D74003C1C1C /* TopTenEntry.m in Sources */,
 				F3F6CF3C14456ED2003C1C1C /* main.m in Sources */,
-				F3B45F2714479DA90005C044 /* PlistManager.m in Sources */,
-				F3B45F2B1447D9890005C044 /* CastManager.m in Sources */,
+				F3B45F2714479DA90005C044 /* PlistHelper.m in Sources */,
+				F3B45F2B1447D9890005C044 /* CastHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
