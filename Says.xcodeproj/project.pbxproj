@@ -162,6 +162,10 @@
 		F3F6CF3114456B77003C1C1C /* TopTenList.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3F6CF3014456B77003C1C1C /* TopTenList.plist */; };
 		F3F6CF3414456D74003C1C1C /* TopTenEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F6CF3314456D74003C1C1C /* TopTenEntry.m */; };
 		F3F6CF3C14456ED2003C1C1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F6CF3A14456ED2003C1C1C /* main.m */; };
+		F3FE95D8144FFCD7007F4F06 /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = F3FE95D4144FFCD7007F4F06 /* blue.png */; };
+		F3FE95D9144FFCD7007F4F06 /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = F3FE95D5144FFCD7007F4F06 /* green.png */; };
+		F3FE95DA144FFCD7007F4F06 /* orange.png in Resources */ = {isa = PBXBuildFile; fileRef = F3FE95D6144FFCD7007F4F06 /* orange.png */; };
+		F3FE95DB144FFCD7007F4F06 /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = F3FE95D7144FFCD7007F4F06 /* red.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -448,6 +452,10 @@
 		F3F6CF3314456D74003C1C1C /* TopTenEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopTenEntry.m; sourceTree = "<group>"; };
 		F3F6CF3A14456ED2003C1C1C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F3F6CF3B14456ED2003C1C1C /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		F3FE95D4144FFCD7007F4F06 /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue.png; sourceTree = "<group>"; };
+		F3FE95D5144FFCD7007F4F06 /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
+		F3FE95D6144FFCD7007F4F06 /* orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orange.png; sourceTree = "<group>"; };
+		F3FE95D7144FFCD7007F4F06 /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -515,6 +523,10 @@
 		DE9517311439F8B20038448F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F3FE95D4144FFCD7007F4F06 /* blue.png */,
+				F3FE95D5144FFCD7007F4F06 /* green.png */,
+				F3FE95D6144FFCD7007F4F06 /* orange.png */,
+				F3FE95D7144FFCD7007F4F06 /* red.png */,
 				F3B45F2E144802AB0005C044 /* back.png */,
 				52735EDE143D677800AA96A0 /* agua_dwn.png */,
 				52735F08143D683500AA96A0 /* menu_agua_dwn.png */,
@@ -919,6 +931,9 @@
 /* Begin PBXProject section */
 		DE9517131439F8B20038448F /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = DE9517161439F8B20038448F /* Build configuration list for PBXProject "Says" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -977,6 +992,10 @@
 				52735F0F143D6ADA00AA96A0 /* menu_cafe.png in Resources */,
 				F3F6CF3114456B77003C1C1C /* TopTenList.plist in Resources */,
 				F3B45F2F144802AB0005C044 /* back.png in Resources */,
+				F3FE95D8144FFCD7007F4F06 /* blue.png in Resources */,
+				F3FE95D9144FFCD7007F4F06 /* green.png in Resources */,
+				F3FE95DA144FFCD7007F4F06 /* orange.png in Resources */,
+				F3FE95DB144FFCD7007F4F06 /* red.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1165,6 +1184,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Says/Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Says/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = "-lz";
@@ -1190,6 +1210,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Says/Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Says/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = "-lz";

@@ -18,37 +18,32 @@
 }
 
 -(id)init {
-    if ((self = [super init])) {        
+    if ((self = [super init])) {  
+        
         table = [[Table alloc] init];
         
         //Menu initialization
         CCMenu* menu = [CCMenu menuWithItems: nil];
-        
-        //Calculation of position of each cell
+        menu.position = CGPointMake([[CCDirector sharedDirector] winSize].width/2, [[CCDirector sharedDirector] winSize].height/2);
+
+        //Calculation of position for each cell
         NSArray* cells = [table cells];
         
-        int y = 200 , x = 0; //[[CCDirector sharedDirector] winSize].height,
-        
-        //TO-DO: esta joda tiene un error en el ******* cuando intenta insertar luego de haberse hecho 0 la x
-        for (int i = 0; i < [cells count]; i++) {
+        for (Cell* cell in cells) {
+            [menu addChild:cell];
             
-            Cell* cell = [cells objectAtIndex:x];
+            CCJumpBy *action = [CCJumpBy actionWithDuration:1 position:ccp([[CCDirector sharedDirector] winSize].width / 3, [[CCDirector sharedDirector] winSize].height/ 3) height:25 jumps:2];
             
-            int newX =  [cell contentSize].width * x;
-            int newY =  y - [cell contentSize].height;
-            cell.position = CGPointMake(newX,newY);
+            [cell runAction:[CCSequence actions:action, [action reverse], nil]];
             
-            x++;
-            
-            if(x == 3){
-                y = cell.position.y - [cell contentSize].height;
-                x = 0;
-            }
-            
-            [menu addChild:cell];//****************
+            //[cell runAction:[CCRotateBy actionWithDuration:1 angle:360]];
         }
         
-        menu.position = CGPointMake(0.0f, 0.0f);
+        //TO-DO: cambiarlo, debe ser dinamico segun el numero de celdas que tenga cells
+        [menu alignItemsInColumns:[NSNumber numberWithUnsignedInt:3],
+         [NSNumber numberWithUnsignedInt:3],
+         [NSNumber numberWithUnsignedInt:1],nil];
+        
         [self addChild:menu];
     }
     
@@ -56,7 +51,7 @@
 }
 
 -(void)dealloc {
-    [table dealloc];
+//    [table dealloc];
     [super dealloc];
 }
 

@@ -17,7 +17,6 @@
 
 -(Table*) init;
 
-
 @property (nonatomic, copy)NSArray* cells;
 
 @end
