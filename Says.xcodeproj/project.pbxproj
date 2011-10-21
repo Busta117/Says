@@ -153,8 +153,6 @@
 		DE9518771439F8B40038448F /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9518761439F8B40038448F /* CJSONSerializer.m */; };
 		DE95187E1439F8B40038448F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE95187D1439F8B40038448F /* AppDelegate.m */; };
 		DE9518811439F8B40038448F /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9518801439F8B40038448F /* RootViewController.m */; };
-		F332C1EE144FDDFC00430E22 /* Table.m in Sources */ = {isa = PBXBuildFile; fileRef = F332C1ED144FDDFC00430E22 /* Table.m */; };
-		F332C1F5144FDEB300430E22 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = F332C1F4144FDEB300430E22 /* Cell.m */; };
 		F35E21601445483800022C85 /* TopTenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F35E215F1445483800022C85 /* TopTenManager.m */; };
 		F3B45F2714479DA90005C044 /* PlistHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B45F2614479DA90005C044 /* PlistHelper.m */; };
 		F3B45F2B1447D9890005C044 /* CastHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B45F2A1447D9890005C044 /* CastHelper.m */; };
@@ -436,10 +434,6 @@
 		DE95187F1439F8B40038448F /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		DE9518801439F8B40038448F /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		DE9518851439F8B40038448F /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
-		F332C1EC144FDDFC00430E22 /* Table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Table.h; sourceTree = "<group>"; };
-		F332C1ED144FDDFC00430E22 /* Table.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Table.m; sourceTree = "<group>"; };
-		F332C1F3144FDEB300430E22 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
-		F332C1F4144FDEB300430E22 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
 		F35E215E1445483800022C85 /* TopTenManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopTenManager.h; sourceTree = "<group>"; };
 		F35E215F1445483800022C85 /* TopTenManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopTenManager.m; sourceTree = "<group>"; };
 		F3B45F2514479DA90005C044 /* PlistHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlistHelper.h; sourceTree = "<group>"; };
@@ -889,10 +883,6 @@
 		F3C6EBCA144FDAB100F43046 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				F332C1EC144FDDFC00430E22 /* Table.h */,
-				F332C1ED144FDDFC00430E22 /* Table.m */,
-				F332C1F3144FDEB300430E22 /* Cell.h */,
-				F332C1F4144FDEB300430E22 /* Cell.m */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -1115,8 +1105,6 @@
 				F3F6CF3C14456ED2003C1C1C /* main.m in Sources */,
 				F3B45F2714479DA90005C044 /* PlistHelper.m in Sources */,
 				F3B45F2B1447D9890005C044 /* CastHelper.m in Sources */,
-				F332C1EE144FDDFC00430E22 /* Table.m in Sources */,
-				F332C1F5144FDEB300430E22 /* Cell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
