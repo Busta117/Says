@@ -8,10 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "Table.h"
 
 @interface GameScene : CCLayer {
-    Table* table;
+
 }
 
 +(id)scene;
