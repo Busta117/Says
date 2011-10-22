@@ -26,37 +26,63 @@
     if ((self = [super init])) {
         CCMenu* menu = [CCMenu menuWithItems:nil];//[CCMenu menuWithItems:btnBack, nil];
         
+        CGSize winSize = [[CCDirector sharedDirector] winSize];
+        
         NSMutableArray* topTen = [TopTenManager getTopTenList];
         
         for (int i = 0; i < [topTen count]; i++) {
             
             TopTenEntry* entry = [topTen objectAtIndex:i];
             
-            CCMenuItemLabel* numberLabel = [CCMenuItemLabel itemWithLabel:
-                                            [[[CCLabelTTF alloc] initWithString:[NSString stringWithFormat:@"%d", i] fontName:FONT_NAME fontSize:FONT_SIZE] autorelease]
-                                            ];
+            CCLabelTTF *numberLbl = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d", i+1] fontName:FONT_NAME fontSize:FONT_SIZE];
             
-            CCMenuItemLabel* nameLabel = [CCMenuItemLabel itemWithLabel:
-                                          [[[CCLabelTTF alloc] initWithString:[entry name] fontName:FONT_NAME fontSize:FONT_SIZE] autorelease] 
-                                          ];
+            CCLabelTTF *nameLbl = [CCLabelTTF labelWithString:[entry name] fontName:FONT_NAME fontSize:FONT_SIZE];
             
-            CCMenuItemLabel* pointsLabel = [CCMenuItemLabel itemWithLabel:
-                                            [[[CCLabelTTF alloc] initWithString:[NSString stringWithFormat:@"%d", [entry points]] fontName:FONT_NAME fontSize:FONT_SIZE] autorelease]
-                                            ];
+            CCLabelTTF *pointsLbl = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d", [entry points]] fontName:FONT_NAME fontSize:FONT_SIZE];
             
-            [menu addChild:numberLabel];
-            [menu addChild:nameLabel];
-            [menu addChild:pointsLabel];
+            numberLbl.anchorPoint = CGPointZero;
+            numberLbl.position = CGPointMake(winSize.width*0.13, winSize.height*0.7 - ([numberLbl contentSize].height+4)*(i+1));
+            nameLbl.anchorPoint = CGPointZero;
+            nameLbl.position = CGPointMake(numberLbl.position.x + 30, numberLbl.position.y);
+            pointsLbl.anchorPoint = CGPointZero;
+            pointsLbl.position = CGPointMake(winSize.width*0.8, numberLbl.position.y);
+            
+            [self addChild:numberLbl];
+            [self addChild:nameLbl];
+            [self addChild:pointsLbl];
+            
+//            CCMenuItemLabel* numberLabel = [CCMenuItemLabel itemWithLabel:
+//                                            [[[CCLabelTTF alloc] initWithString:[NSString stringWithFormat:@"%d", i] fontName:FONT_NAME fontSize:FONT_SIZE] autorelease]
+//                                            ];
+//            
+//            CCMenuItemLabel* nameLabel = [CCMenuItemLabel itemWithLabel:
+//                                          [[[CCLabelTTF alloc] initWithString:[entry name] fontName:FONT_NAME fontSize:FONT_SIZE] autorelease] 
+//                                          ];
+//            
+//            CCMenuItemLabel* pointsLabel = [CCMenuItemLabel itemWithLabel:
+//                                            [[[CCLabelTTF alloc] initWithString:[NSString stringWithFormat:@"%d", [entry points]] fontName:FONT_NAME fontSize:FONT_SIZE] autorelease]
+//                                            ];
+//            
+//            [menu addChild:numberLabel];
+//            [menu addChild:nameLabel];
+//            [menu addChild:pointsLabel];
         }
         
         //Fill the rest with empty spaces
         for (int i = [topTen count]; i < 10; i++) {
             
-            [menu addChild: [CCMenuItemLabel itemWithLabel:[[[CCLabelTTF alloc] initWithString:[NSString stringWithFormat:@"%d",i+1] fontName:FONT_NAME fontSize:FONT_SIZE] autorelease]] ];
-
-            [menu addChild: [CCMenuItemLabel itemWithLabel:[[[CCLabelTTF alloc] initWithString:@"" fontName:FONT_NAME fontSize:FONT_SIZE] autorelease]] ];
+            CCLabelTTF *numberLbl = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d", i+1] fontName:FONT_NAME fontSize:FONT_SIZE];
             
-            [menu addChild: [CCMenuItemLabel itemWithLabel:[[[CCLabelTTF alloc] initWithString:@"" fontName:FONT_NAME fontSize:FONT_SIZE] autorelease]] ];
+            CCLabelTTF *nameLbl = [CCLabelTTF labelWithString:@"-" fontName:FONT_NAME fontSize:FONT_SIZE];
+            
+            CCLabelTTF *pointsLbl = [CCLabelTTF labelWithString:@"-" fontName:FONT_NAME fontSize:FONT_SIZE];
+            
+            
+//            [menu addChild: [CCMenuItemLabel itemWithLabel:[[[CCLabelTTF alloc] initWithString:[NSString stringWithFormat:@"%d",i+1] fontName:FONT_NAME fontSize:FONT_SIZE] autorelease]] ];
+//
+//            [menu addChild: [CCMenuItemLabel itemWithLabel:[[[CCLabelTTF alloc] initWithString:@"" fontName:FONT_NAME fontSize:FONT_SIZE] autorelease]] ];
+//            
+//            [menu addChild: [CCMenuItemLabel itemWithLabel:[[[CCLabelTTF alloc] initWithString:@"" fontName:FONT_NAME fontSize:FONT_SIZE] autorelease]] ];
         }
         
         
@@ -65,16 +91,18 @@
                                                                     target:self 
                                                                   selector:@selector(menuBackBtnTouched:)];
         
-        
-        btnBack.position = CGPointMake( [btnBack contentSize].width, [btnBack contentSize].height);
+        btnBack.anchorPoint = CGPointZero;
+//        btnBack.position = CGPointMake( [btnBack contentSize].width, [btnBack contentSize].height);
         
         [menu addChild:btnBack];
-                
-        [menu alignItemsInColumns:[NSNumber numberWithInt:3],[NSNumber numberWithInt:3],[NSNumber numberWithInt:3],
-         [NSNumber numberWithInt:3],[NSNumber numberWithInt:3],[NSNumber numberWithInt:3],
-         [NSNumber numberWithInt:3],[NSNumber numberWithInt:3],[NSNumber numberWithInt:3],
-         [NSNumber numberWithInt:3],[NSNumber numberWithInt:1],nil];
-        
+//                
+//        [menu alignItemsInColumns:[NSNumber numberWithInt:3],[NSNumber numberWithInt:3],[NSNumber numberWithInt:3],
+//         [NSNumber numberWithInt:3],[NSNumber numberWithInt:3],[NSNumber numberWithInt:3],
+//         [NSNumber numberWithInt:3],[NSNumber numberWithInt:3],[NSNumber numberWithInt:3],
+//         [NSNumber numberWithInt:3],[NSNumber numberWithInt:1],nil];
+//        
+        menu.anchorPoint = CGPointZero;
+        menu.position = CGPointZero;
         [self addChild:menu];
 
     }

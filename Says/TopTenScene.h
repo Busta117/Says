@@ -16,5 +16,6 @@
 }
 
 +(id)scene;
+-(void)menuBackBtnTouched: (id)sender;
 
 @end
