@@ -10,20 +10,41 @@
 
 @implementation PlistHelper
 
-+(NSString*) getRealPathPlist: (NSString*) plistFile{
++(NSString*) getRealPathPlist: (NSString*) plistFile
+{
     NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     return [rootPath stringByAppendingPathComponent:plistFile];
 }
 
-+(NSMutableDictionary*) getPlistDictionary:(NSString*)plistFile{
-    return [[NSMutableDictionary alloc] initWithContentsOfFile: [self getRealPathPlist:plistFile]];
++(NSMutableArray*) getPlistData:(NSString*)plistFile
+{
+    return [[NSMutableArray alloc] initWithContentsOfFile: [self getRealPathPlist:plistFile]];
 }
 
-+(NSString*) saveToPlist: (NSMutableDictionary*) dictionary in:(NSString*)plistFile{
++(NSString*) saveDictionaryToPlist: (NSMutableDictionary*) dictionary in:(NSString*)plistFile
+{
     NSString* error;
     NSString* pathPList = [self getRealPathPlist:plistFile];
     
     NSData *plistData = [NSPropertyListSerialization dataFromPropertyList: dictionary
+                                                                   format:NSPropertyListXMLFormat_v1_0  errorDescription:&error];
+    if(plistData) {
+        [plistData writeToFile:pathPList atomically:YES];
+    }
+    else {
+        NSLog(@"Error : %@",error);
+        return error;
+    }
+    
+    return nil;
+}
+
++(NSString*) saveArrayToPlist: (NSMutableArray*) array in:(NSString*)plistFile
+{
+    NSString* error;
+    NSString* pathPList = [self getRealPathPlist:plistFile];
+        
+    NSData *plistData = [NSPropertyListSerialization dataFromPropertyList: array
                                                                    format:NSPropertyListXMLFormat_v1_0  errorDescription:&error];
     if(plistData) {
         [plistData writeToFile:pathPList atomically:YES];

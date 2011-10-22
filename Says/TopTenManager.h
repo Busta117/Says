@@ -16,7 +16,7 @@
 
 // Returns a dictionary with |TopTenEntry| objects 
 // where the key is the position in the TopTen List and the value is the |TopTenEntry| object
-+(NSMutableDictionary*) getTopTenList;
++(NSMutableArray*) getTopTenList;
 
 //Calculate the position in the TopTen list and add to it
 +(void) addTopTenEntry: (TopTenEntry*) entry;

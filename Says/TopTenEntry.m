@@ -9,6 +9,8 @@
 
 @implementation TopTenEntry
 
+#define MAX_NAME_LENGTH 15
+
 @synthesize name = _name;
 @synthesize points = _points;
 
@@ -25,43 +27,84 @@
     return self;
 }
 
--(id)initWithName: (NSString *)inName andPoints:(NSInteger)inPoints
+-(id)initWithName: (NSString *)inName andPoints:(int)inPoints
 {
     if (self = [super init])
     {
-        self.name = inName;
+        if([inName length] >= MAX_NAME_LENGTH){
+            self.name = [NSString stringWithFormat:@"%@...",[inName substringToIndex:MAX_NAME_LENGTH] ];
+        }
+        else{
+            self.name = inName;
+        }
         self.points = inPoints;
     }
     return self;
 }
 
 #pragma mark -
-#pragma mark Castings
+#pragma mark Serializations
 
-+(NSMutableDictionary*) castToDictionary:(TopTenEntry*)topTenEntry
++(NSMutableArray*) serializeToArray:(TopTenEntry*)topTenEntry;
+{
+    NSMutableArray* array = [[NSMutableArray alloc] initWithCapacity:1];
+    
+    [array addObject:[topTenEntry name]];
+    [array addObject:[NSNumber numberWithInt:[topTenEntry points]]];
+    
+    return array;
+}
+
++(NSMutableArray*) serializeToArrayOfArrays:(NSMutableArray*)topTenEntries;
+{
+    NSMutableArray* arrayOfArrays = [[NSMutableArray alloc] initWithCapacity:[topTenEntries count]];
+    
+    for (TopTenEntry* entry in topTenEntries) {
+        [arrayOfArrays addObject:[TopTenEntry serializeToArray:entry]];
+    }
+    
+    return arrayOfArrays;
+}
+
++(NSMutableDictionary*) serializeToDictionary:(TopTenEntry*)topTenEntry
 {
     NSMutableDictionary* dictionary = [[NSMutableDictionary alloc] initWithCapacity:1];
     [dictionary setObject:[topTenEntry name] forKey:@"name"];
-    [dictionary setObject:[NSNumber numberWithInteger:[topTenEntry points]] forKey:@"points"];
+    [dictionary setObject:[NSNumber numberWithInt:[topTenEntry points]] forKey:@"points"];
     return dictionary;
 }
 
-+(NSMutableDictionary*) castToDictionaryOfDictionaries:(NSMutableDictionary*)dictionaryTopTen
++(NSMutableDictionary*) serializeToDictionaryOfDictionaries:(NSMutableDictionary*)dictionaryTopTen
 {    
     NSMutableDictionary* dictionaryOfDictionaries = [[NSMutableDictionary alloc] initWithCapacity:[dictionaryTopTen count]];
     
     for (id key in dictionaryTopTen) {
         TopTenEntry* entry = [dictionaryTopTen objectForKey:key];
-        [dictionaryOfDictionaries setObject:[TopTenEntry castToDictionary:entry] forKey:key];
+        [dictionaryOfDictionaries setObject:[TopTenEntry serializeToDictionary:entry] forKey:key];
     }
 
     return dictionaryOfDictionaries;
 }
 
-+(TopTenEntry*) castToEntryFromDictionary:(NSMutableDictionary*)dictionary
+#pragma mark -
+#pragma mark Deserializations
+
++(TopTenEntry*) deserializeFromArray:(NSMutableArray*)topTenEntry;
+{    
+    return [[TopTenEntry alloc] initWithName:[topTenEntry objectAtIndex:0] 
+                        andPoints: [[topTenEntry objectAtIndex:1] intValue]];
+}
+
++(TopTenEntry*) deserializeFromDictionary:(NSMutableDictionary*)dictionary
 {
     return [[TopTenEntry alloc] initWithName:[dictionary objectForKey:@"name"] 
                                    andPoints:[[dictionary objectForKey:@"points"] intValue]];
+}
+
+//The DBG console call this method to print values (Debug help)
+-(NSString *) description {
+    return [NSString stringWithFormat:@"TopTenEntry Name:%@ Points:%d",
+            _name, _points];
 }
 
 @end

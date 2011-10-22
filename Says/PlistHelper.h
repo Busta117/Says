@@ -12,9 +12,12 @@
 @interface PlistHelper : NSObject
 
 //Returns a NSMutableDictionary that |plistFile| contains
-+(NSMutableDictionary*) getPlistDictionary:(NSString*)plistFile;
++(NSMutableArray*) getPlistData:(NSString*)plistFile;
 
 //Save |dictionary| to the |plistFile|
-+(NSString*) saveToPlist: (NSMutableDictionary*) dictionary in:(NSString*)plistFile;
++(NSString*) saveDictionaryToPlist: (NSMutableDictionary*) dictionary in:(NSString*)plistFile;
+
+//Save |array| to the |plistFile|
++(NSString*) saveArrayToPlist: (NSMutableArray*) array in:(NSString*)plistFile;
 
 @end

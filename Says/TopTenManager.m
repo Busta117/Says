@@ -30,85 +30,87 @@
 #pragma mark -
 #pragma mark Managment
 
-+(NSMutableDictionary*) getTopTenList
++(NSMutableArray*) getTopTenList
 {
-    NSMutableDictionary* dictUnserialized = [PlistHelper getPlistDictionary:PLIST_FILE];
-    NSMutableDictionary* dictSerialized = [[NSMutableDictionary alloc] initWithCapacity:[dictUnserialized count]];
+    NSMutableArray* unserialized = [PlistHelper getPlistData:PLIST_FILE];
+    NSMutableArray* serialized = [[NSMutableArray alloc] initWithCapacity:[unserialized count]];
     
     //Unserialize the entries
-    for (id key in dictUnserialized){
-        TopTenEntry* entry = [TopTenEntry castToEntryFromDictionary:[dictUnserialized objectForKey:key]];
-        [dictSerialized setObject:entry forKey:key];
+    for (int i = 0; i < [unserialized count]; i++) {
+        TopTenEntry* entry = [TopTenEntry deserializeFromArray:[unserialized objectAtIndex:i] ];
+        [serialized addObject:entry];
     }
     
-    [dictUnserialized release];
+    [unserialized release];
     
-    return dictSerialized;
+    return serialized;
 }
 
 //Update the |topTenDictionary| with the |newEntry| (search a new position and move the others if it is necessary)
-+(void) update: (NSMutableDictionary*)topTen withEntry:(TopTenEntry*) newEntry
++(void) update: (NSMutableArray*)topTen withEntry:(TopTenEntry*) newEntry
 {
-    NSMutableDictionary* newTopTen = [NSMutableDictionary new];
-    int lastPosition = -1, leftEntries = 0;
+    NSMutableArray* newTopTen = [NSMutableArray new];
+    int lastPosition = -1;
     bool newEntryAdded = false;
+    
+    if([newEntry points] == 0){ //There is no highscore to manage
+        return;
+    }
     
     //Search the position for the new entry while it adds the entries (that have more points that the new) to the newTopTenDictionary
     for (int i = 0; i < [topTen count] ; i++) {
-        TopTenEntry* entryTemp = [topTen objectForKey:[CastHelper toString:i]];
+        TopTenEntry* entryTemp = [topTen objectAtIndex:i];
         lastPosition = i;
 
         if( [entryTemp points] < [newEntry points] ){//If the new entry have more points
-            
-            [newTopTen setObject:newEntry forKey:[CastHelper toString:i]];
+
+            [newTopTen  addObject:newEntry];
             newEntryAdded = true;
             break;
             
         }else{
-            [newTopTen setObject:entryTemp forKey:[CastHelper toString:i]];
+            [newTopTen addObject:entryTemp];
         }
     }
     
     // Is becouse there are left entries to add to the newTopTenD
     if(newEntryAdded){ 
-        //How many entries left in the newTopTenDictionary
-        leftEntries = [topTen count] - lastPosition;
-        
+       
         //Add the left entries to the newTopTenDiciontary with her keys updated
-        for (int i = lastPosition; i < leftEntries; i++) {
-            [newTopTen setObject:[topTen objectForKey:[CastHelper toString:i]] forKey:[CastHelper toString:i+1]];
-            
+        for (int i = lastPosition; i < [topTen count]; i++) {
+            [newTopTen addObject:[topTen objectAtIndex:i]];
+
             //The rest must be forgiven becouse the TopTen is fully
             if([newTopTen count] == MAX_TOP_TEN_ENTRIES){
                 break;
             }
         }
     }else{
-        [newTopTen setObject:newEntry forKey:[CastHelper toString:lastPosition+1]];
+        [newTopTen addObject:newEntry];
     }
-    
+        
     //Free memory and sets the new value
     [topTen removeAllObjects];
-    [topTen addEntriesFromDictionary:newTopTen];
+    [topTen addObjectsFromArray:newTopTen];
     [newTopTen release];
 }
 
 +(void) addTopTenEntry: (TopTenEntry*) entry
 {
-    NSMutableDictionary *topTen= [self getTopTenList];
+    NSMutableArray *topTen = [self getTopTenList];
 
     //Updates the dictionary
     [TopTenManager update:topTen withEntry:entry];
         
     //Try to write in plist the new data
-    [PlistHelper saveToPlist: [TopTenEntry castToDictionaryOfDictionaries:topTen] in:PLIST_FILE];
+    [PlistHelper saveArrayToPlist:[TopTenEntry serializeToArrayOfArrays:topTen] in:PLIST_FILE];
     
     [topTen release];
 }
 
 +(void) clearTopTen
 {
-    [PlistHelper saveToPlist:[NSMutableDictionary new] in:PLIST_FILE];
+    [PlistHelper saveArrayToPlist:[NSMutableArray new] in:PLIST_FILE];
 }
 
 

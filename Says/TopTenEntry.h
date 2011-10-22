@@ -13,25 +13,39 @@
 @interface TopTenEntry : NSObject{
 @private
     NSString* _name;
-    NSInteger _points;
+    int _points;
 }
 
-@property (nonatomic, assign) NSString * name;
-@property (nonatomic, assign) NSInteger points;
+@property (nonatomic, copy) NSString* name;
+@property (nonatomic, assign) int points;
 
--(id)initWithName: (NSString *)inName andPoints:(NSInteger)inPoints;
+-(id)initWithName: (NSString *)inName andPoints:(int)inPoints;
 
 #pragma mark -
-#pragma mark Castings
+#pragma mark Serializations
+
+//Cast the object into an array (that contains keys and values for each attibute of TopTenEntry)
++(NSMutableArray*) serializeToArray:(TopTenEntry*)topTenEntry;
+
+//Cast an array (that contains |TopTenEntry| objects) to an array of arrays (each one contain 
+//the key name and points that corresponds with each TopTenEntry object.
++(NSMutableArray*) serializeToArrayOfArrays:(NSMutableArray*)topTenEntries;
 
 //Cast the object into a dictionary (that contains keys and values for each attibute of TopTenEntry)
-+(NSMutableDictionary*) castToDictionary:(TopTenEntry*)topTenEntry;
-
-//Cast a dictionary (that contains keys name and points only) to a |TopTenEntry| object
-+(TopTenEntry*) castToEntryFromDictionary:(NSMutableDictionary*)dictionary;
++(NSMutableDictionary*) serializeToDictionary:(TopTenEntry*)topTenEntry;
 
 //Cast a dictionary (that contains |TopTenEntry| objects) to a dictionary of dictionaries (each one contain 
 //the key name and points that corresponds with each TopTenEntry object.
-+(NSMutableDictionary*) castToDictionaryOfDictionaries:(NSMutableDictionary*)dictionaryTopTen;
++(NSMutableDictionary*) serializeToDictionaryOfDictionaries:(NSMutableDictionary*)dictionaryTopTen;
+
+#pragma mark -
+#pragma mark Deserializations
+
+//Cast an array (that contains keys name and points only) to a |TopTenEntry| object
++(TopTenEntry*) deserializeFromArray:(NSMutableArray*)topTenEntry;
+
+//Cast a dictionary (that contains keys name and points only) to a |TopTenEntry| object
++(TopTenEntry*) deserializeFromDictionary:(NSMutableDictionary*)dictionary;
+
 
 @end
