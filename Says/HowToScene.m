@@ -8,7 +8,6 @@
 
 #import "HowToScene.h"
 
-
 @implementation HowToScene
 
 #pragma mark -
@@ -24,14 +23,10 @@
 -(id)init {
     if ((self = [super init])) {
         //CCLOG(@"%@: %@", NSStringFromSelector(_cmd), self);
-        CCSprite* btnBackNormal = [CCSprite spriteWithFile:@"back.png"];
-        CCSprite* btnBackSelected = [CCSprite spriteWithFile:@"back.png"];
-        
-        CCMenuItemSprite* btnBack = [CCMenuItemSprite itemFromNormalSprite:btnBackNormal 
-                                                            selectedSprite:btnBackSelected 
+        CCMenuItemSprite* btnBack = [CCMenuItemSprite itemFromNormalSprite:[CCSprite spriteWithFile:@"back.png"] 
+                                                            selectedSprite:[CCSprite spriteWithFile:@"back.png"] 
                                                                     target:self 
                                                                   selector:@selector(menuBackBtnTouched:)];
-        //CGSize winSize = [[CCDirector sharedDirector] winSize];
         
         
         btnBack.position = CGPointMake( [btnBack contentSize].width, [btnBack contentSize].height);

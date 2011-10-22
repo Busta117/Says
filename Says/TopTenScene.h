@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "MenuLayer.h"
+#import "TopTenManager.h"
 
 @interface TopTenScene: CCLayer {
     

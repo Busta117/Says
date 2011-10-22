@@ -7,7 +7,8 @@
 //
 
 #import "TopTenScene.h"
-
+#define FONT_NAME @"Arial"
+#define FONT_SIZE 15
 
 @implementation TopTenScene
 
@@ -23,21 +24,57 @@
 
 -(id)init {
     if ((self = [super init])) {
-        //CCLOG(@"%@: %@", NSStringFromSelector(_cmd), self);
-        CCSprite* btnBackNormal = [CCSprite spriteWithFile:@"back.png"];
-        CCSprite* btnBackSelected = [CCSprite spriteWithFile:@"back.png"];
+        CCMenu* menu = [CCMenu menuWithItems:nil];//[CCMenu menuWithItems:btnBack, nil];
         
-        CCMenuItemSprite* btnBack = [CCMenuItemSprite itemFromNormalSprite:btnBackNormal 
-                                                            selectedSprite:btnBackSelected 
+        NSMutableArray* topTen = [TopTenManager getTopTenList];
+        
+        for (int i = 0; i < [topTen count]; i++) {
+            
+            TopTenEntry* entry = [topTen objectAtIndex:i];
+            
+            CCMenuItemLabel* numberLabel = [CCMenuItemLabel itemWithLabel:
+                                            [[[CCLabelTTF alloc] initWithString:[NSString stringWithFormat:@"%d", i] fontName:FONT_NAME fontSize:FONT_SIZE] autorelease]
+                                            ];
+            
+            CCMenuItemLabel* nameLabel = [CCMenuItemLabel itemWithLabel:
+                                          [[[CCLabelTTF alloc] initWithString:[entry name] fontName:FONT_NAME fontSize:FONT_SIZE] autorelease] 
+                                          ];
+            
+            CCMenuItemLabel* pointsLabel = [CCMenuItemLabel itemWithLabel:
+                                            [[[CCLabelTTF alloc] initWithString:[NSString stringWithFormat:@"%d", [entry points]] fontName:FONT_NAME fontSize:FONT_SIZE] autorelease]
+                                            ];
+            
+            [menu addChild:numberLabel];
+            [menu addChild:nameLabel];
+            [menu addChild:pointsLabel];
+        }
+        
+        //Fill the rest with empty spaces
+        for (int i = [topTen count]; i < 10; i++) {
+            
+            [menu addChild: [CCMenuItemLabel itemWithLabel:[[[CCLabelTTF alloc] initWithString:[NSString stringWithFormat:@"%d",i+1] fontName:FONT_NAME fontSize:FONT_SIZE] autorelease]] ];
+
+            [menu addChild: [CCMenuItemLabel itemWithLabel:[[[CCLabelTTF alloc] initWithString:@"" fontName:FONT_NAME fontSize:FONT_SIZE] autorelease]] ];
+            
+            [menu addChild: [CCMenuItemLabel itemWithLabel:[[[CCLabelTTF alloc] initWithString:@"" fontName:FONT_NAME fontSize:FONT_SIZE] autorelease]] ];
+        }
+        
+        
+        CCMenuItemSprite* btnBack = [CCMenuItemSprite itemFromNormalSprite:[CCSprite spriteWithFile:@"back.png"] 
+                                                            selectedSprite:[CCSprite spriteWithFile:@"back.png"] 
                                                                     target:self 
                                                                   selector:@selector(menuBackBtnTouched:)];
-        //CGSize winSize = [[CCDirector sharedDirector] winSize];
-
-
+        
+        
         btnBack.position = CGPointMake( [btnBack contentSize].width, [btnBack contentSize].height);
-
-        CCMenu* menu = [CCMenu menuWithItems:btnBack, nil];
-        menu.position = CGPointMake(0.0f, 0.0f);
+        
+        [menu addChild:btnBack];
+                
+        [menu alignItemsInColumns:[NSNumber numberWithInt:3],[NSNumber numberWithInt:3],[NSNumber numberWithInt:3],
+         [NSNumber numberWithInt:3],[NSNumber numberWithInt:3],[NSNumber numberWithInt:3],
+         [NSNumber numberWithInt:3],[NSNumber numberWithInt:3],[NSNumber numberWithInt:3],
+         [NSNumber numberWithInt:3],[NSNumber numberWithInt:1],nil];
+        
         [self addChild:menu];
 
     }
