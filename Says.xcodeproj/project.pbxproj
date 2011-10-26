@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52585AB014579B5B004BA476 /* GameSettingsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 52585AAF14579B5B004BA476 /* GameSettingsModel.m */; };
+		52585AB51457AC7A004BA476 /* GameSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52585AB41457AC7A004BA476 /* GameSettingsController.m */; };
 		52735EF3143D677E00AA96A0 /* agua_dwn.png in Resources */ = {isa = PBXBuildFile; fileRef = 52735EDE143D677800AA96A0 /* agua_dwn.png */; };
 		52735EF4143D677E00AA96A0 /* agua.png in Resources */ = {isa = PBXBuildFile; fileRef = 52735EDF143D677800AA96A0 /* agua.png */; };
 		52735EF5143D677E00AA96A0 /* amarillo_dwn.png in Resources */ = {isa = PBXBuildFile; fileRef = 52735EE0143D677800AA96A0 /* amarillo_dwn.png */; };
@@ -167,6 +169,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		52585AAE14579B5B004BA476 /* GameSettingsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSettingsModel.h; sourceTree = "<group>"; };
+		52585AAF14579B5B004BA476 /* GameSettingsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSettingsModel.m; sourceTree = "<group>"; };
+		52585AB31457AC7A004BA476 /* GameSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSettingsController.h; sourceTree = "<group>"; };
+		52585AB41457AC7A004BA476 /* GameSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSettingsController.m; sourceTree = "<group>"; };
 		52735EDE143D677800AA96A0 /* agua_dwn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = agua_dwn.png; path = Resources/agua_dwn.png; sourceTree = "<group>"; };
 		52735EDF143D677800AA96A0 /* agua.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = agua.png; path = Resources/agua.png; sourceTree = "<group>"; };
 		52735EE0143D677800AA96A0 /* amarillo_dwn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = amarillo_dwn.png; path = Resources/amarillo_dwn.png; sourceTree = "<group>"; };
@@ -471,6 +477,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52585AAC14579B08004BA476 /* GameSettings */ = {
+			isa = PBXGroup;
+			children = (
+				52585AAE14579B5B004BA476 /* GameSettingsModel.h */,
+				52585AAF14579B5B004BA476 /* GameSettingsModel.m */,
+			);
+			name = GameSettings;
+			sourceTree = "<group>";
+		};
+		52585AB11457AC1B004BA476 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				52585AB21457AC5C004BA476 /* GameSettings */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		52585AB21457AC5C004BA476 /* GameSettings */ = {
+			isa = PBXGroup;
+			children = (
+				52585AB31457AC7A004BA476 /* GameSettingsController.h */,
+				52585AB41457AC7A004BA476 /* GameSettingsController.m */,
+			);
+			name = GameSettings;
+			sourceTree = "<group>";
+		};
 		DE9517111439F8B20038448F = {
 			isa = PBXGroup;
 			children = (
@@ -807,7 +839,8 @@
 			isa = PBXGroup;
 			children = (
 				F365790D144552C5003842F0 /* Model */,
-				F35E2158144544D300022C85 /* Scenes */,
+				52585AB11457AC1B004BA476 /* Controller */,
+				F35E2158144544D300022C85 /* View */,
 				DE95187C1439F8B40038448F /* AppDelegate.h */,
 				DE95187D1439F8B40038448F /* AppDelegate.m */,
 				9C562975143A28BB00CFCB0D /* MenuLayer.h */,
@@ -818,7 +851,7 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
-		F35E2158144544D300022C85 /* Scenes */ = {
+		F35E2158144544D300022C85 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				9C562983143A377F00CFCB0D /* GameScene.h */,
@@ -833,7 +866,7 @@
 				9C3D7BEC1445031300B210F2 /* AboutScene.h */,
 				9C3D7BED1445031300B210F2 /* AboutScene.m */,
 			);
-			name = Scenes;
+			name = View;
 			sourceTree = "<group>";
 		};
 		F35E215A144544EF00022C85 /* Libs */ = {
@@ -851,6 +884,7 @@
 		F365790D144552C5003842F0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				52585AAC14579B08004BA476 /* GameSettings */,
 				F3C6EBCA144FDAB100F43046 /* Game */,
 				F3B45F2D1447E3110005C044 /* Helpers */,
 				F3B45F2C1447E3010005C044 /* TopTen */,
@@ -923,6 +957,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = Demens;
 			};
 			buildConfigurationList = DE9517161439F8B20038448F /* Build configuration list for PBXProject "Says" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1105,6 +1140,8 @@
 				F3F6CF3C14456ED2003C1C1C /* main.m in Sources */,
 				F3B45F2714479DA90005C044 /* PlistHelper.m in Sources */,
 				F3B45F2B1447D9890005C044 /* CastHelper.m in Sources */,
+				52585AB014579B5B004BA476 /* GameSettingsModel.m in Sources */,
+				52585AB51457AC7A004BA476 /* GameSettingsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1119,7 +1156,7 @@
 					armv7,
 					"$(ARCHS_STANDARD_32_BIT)",
 				);
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1131,7 +1168,6 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1144,7 +1180,7 @@
 					armv7,
 					"$(ARCHS_STANDARD_32_BIT)",
 				);
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = NDEBUG;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
@@ -1152,7 +1188,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
@@ -1165,8 +1200,8 @@
 					armv6,
 					"$(ARCHS_STANDARD_32_BIT)",
 				);
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1177,8 +1212,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1192,8 +1225,8 @@
 					armv6,
 					"$(ARCHS_STANDARD_32_BIT)",
 				);
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Says/Prefix.pch;
@@ -1203,8 +1236,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;

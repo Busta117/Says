@@ -8,7 +8,7 @@
 
 #import "TopTenManager.h"
 
-#define PLIST_FILE @"PLIST_TopTen.plist"
+#define PLIST_FILE @"PLIST_TopTen24323.plist"
 #define DICTIONARY_KEY @"TopTenDictionary"
 #define MAX_TOP_TEN_ENTRIES 10 //Defines the max number of top ten entries
 

@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "GameScene.h"
+#import "HowToScene.h"
+#import "TopTenScene.h"
+#import "ConfigScene.h"
+#import "AboutScene.h"
+#import "TopTenManager.h"
+#import "GameSettingsModel.h"
+
 
 @interface MenuLayer : CCLayer {
     float margin;

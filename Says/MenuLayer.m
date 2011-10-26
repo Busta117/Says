@@ -7,12 +7,7 @@
 //
 
 #import "MenuLayer.h"
-#import "GameScene.h"
-#import "HowToScene.h"
-#import "TopTenScene.h"
-#import "ConfigScene.h"
-#import "AboutScene.h"
-#import "TopTenManager.h"
+
 
 @interface MenuLayer (privateMethods)
 -(void)menuPlayBtnTouched: (id)sender;
@@ -36,8 +31,6 @@
     if ((self = [super init])) {
         //define margin depending the device. --> must do!!
         margin = 10;
-        
-        CCLOG(@"%@: %@", NSStringFromSelector(_cmd), self);
         
         //Creación de Sprites
         
@@ -133,8 +126,6 @@
 
         [TopTenManager addTopTenEntry: [[TopTenEntry new] initWithName:@"hhhhhhhh" andPoints:100]];
         [TopTenManager addTopTenEntry: [[TopTenEntry new] initWithName:@"ggggghhh" andPoints:300]];
-
-
 
 
     }
