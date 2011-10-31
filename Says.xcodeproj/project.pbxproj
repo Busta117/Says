@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5212E77F145DF68600E17D0F /* musicOff_dwn.png in Resources */ = {isa = PBXBuildFile; fileRef = 5212E77B145DF68600E17D0F /* musicOff_dwn.png */; };
+		5212E780145DF68600E17D0F /* musicOff_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 5212E77C145DF68600E17D0F /* musicOff_up.png */; };
+		5212E781145DF68600E17D0F /* musicOn_dwn.png in Resources */ = {isa = PBXBuildFile; fileRef = 5212E77D145DF68600E17D0F /* musicOn_dwn.png */; };
+		5212E782145DF68600E17D0F /* musicOn_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 5212E77E145DF68600E17D0F /* musicOn_up.png */; };
+		5212E785145DF9B300E17D0F /* fxOff_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 5212E783145DF9B300E17D0F /* fxOff_up.png */; };
+		5212E786145DF9B300E17D0F /* fxOn_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 5212E784145DF9B300E17D0F /* fxOn_up.png */; };
 		52585AB014579B5B004BA476 /* GameSettingsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 52585AAF14579B5B004BA476 /* GameSettingsModel.m */; };
 		52585AB51457AC7A004BA476 /* GameSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52585AB41457AC7A004BA476 /* GameSettingsController.m */; };
 		52735EF3143D677E00AA96A0 /* agua_dwn.png in Resources */ = {isa = PBXBuildFile; fileRef = 52735EDE143D677800AA96A0 /* agua_dwn.png */; };
@@ -169,6 +175,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5212E77B145DF68600E17D0F /* musicOff_dwn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = musicOff_dwn.png; path = Resources/musicOff_dwn.png; sourceTree = "<group>"; };
+		5212E77C145DF68600E17D0F /* musicOff_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = musicOff_up.png; path = Resources/musicOff_up.png; sourceTree = "<group>"; };
+		5212E77D145DF68600E17D0F /* musicOn_dwn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = musicOn_dwn.png; path = Resources/musicOn_dwn.png; sourceTree = "<group>"; };
+		5212E77E145DF68600E17D0F /* musicOn_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = musicOn_up.png; path = Resources/musicOn_up.png; sourceTree = "<group>"; };
+		5212E783145DF9B300E17D0F /* fxOff_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fxOff_up.png; path = Resources/fxOff_up.png; sourceTree = "<group>"; };
+		5212E784145DF9B300E17D0F /* fxOn_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fxOn_up.png; path = Resources/fxOn_up.png; sourceTree = "<group>"; };
 		52585AAE14579B5B004BA476 /* GameSettingsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSettingsModel.h; sourceTree = "<group>"; };
 		52585AAF14579B5B004BA476 /* GameSettingsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSettingsModel.m; sourceTree = "<group>"; };
 		52585AB31457AC7A004BA476 /* GameSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSettingsController.h; sourceTree = "<group>"; };
@@ -549,6 +561,12 @@
 		DE9517311439F8B20038448F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5212E783145DF9B300E17D0F /* fxOff_up.png */,
+				5212E784145DF9B300E17D0F /* fxOn_up.png */,
+				5212E77B145DF68600E17D0F /* musicOff_dwn.png */,
+				5212E77C145DF68600E17D0F /* musicOff_up.png */,
+				5212E77D145DF68600E17D0F /* musicOn_dwn.png */,
+				5212E77E145DF68600E17D0F /* musicOn_up.png */,
 				F3FE95D4144FFCD7007F4F06 /* blue.png */,
 				F3FE95D5144FFCD7007F4F06 /* green.png */,
 				F3FE95D6144FFCD7007F4F06 /* orange.png */,
@@ -841,6 +859,7 @@
 				F365790D144552C5003842F0 /* Model */,
 				52585AB11457AC1B004BA476 /* Controller */,
 				F35E2158144544D300022C85 /* View */,
+				DE9518851439F8B40038448F /* GameConfig.h */,
 				DE95187C1439F8B40038448F /* AppDelegate.h */,
 				DE95187D1439F8B40038448F /* AppDelegate.m */,
 				9C562975143A28BB00CFCB0D /* MenuLayer.h */,
@@ -856,7 +875,6 @@
 			children = (
 				9C562983143A377F00CFCB0D /* GameScene.h */,
 				9C562984143A378000CFCB0D /* GameScene.m */,
-				DE9518851439F8B40038448F /* GameConfig.h */,
 				9C3D7BE21444FF8D00B210F2 /* HowToScene.h */,
 				9C3D7BE31444FF8D00B210F2 /* HowToScene.m */,
 				9C3D7BE61445019C00B210F2 /* TopTenScene.h */,
@@ -1021,6 +1039,12 @@
 				F3FE95D9144FFCD7007F4F06 /* green.png in Resources */,
 				F3FE95DA144FFCD7007F4F06 /* orange.png in Resources */,
 				F3FE95DB144FFCD7007F4F06 /* red.png in Resources */,
+				5212E77F145DF68600E17D0F /* musicOff_dwn.png in Resources */,
+				5212E780145DF68600E17D0F /* musicOff_up.png in Resources */,
+				5212E781145DF68600E17D0F /* musicOn_dwn.png in Resources */,
+				5212E782145DF68600E17D0F /* musicOn_up.png in Resources */,
+				5212E785145DF9B300E17D0F /* fxOff_up.png in Resources */,
+				5212E786145DF9B300E17D0F /* fxOn_up.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1154,7 +1178,6 @@
 				ARCHS = (
 					armv6,
 					armv7,
-					"$(ARCHS_STANDARD_32_BIT)",
 				);
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1178,7 +1201,6 @@
 				ARCHS = (
 					armv6,
 					armv7,
-					"$(ARCHS_STANDARD_32_BIT)",
 				);
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1197,8 +1219,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = (
+					armv7,
 					armv6,
-					"$(ARCHS_STANDARD_32_BIT)",
 				);
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1222,8 +1244,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = (
+					armv7,
 					armv6,
-					"$(ARCHS_STANDARD_32_BIT)",
 				);
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";

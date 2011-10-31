@@ -10,18 +10,13 @@
 
 @implementation GameSettingsController
 
-
 - (id) init {
     
-    if (self == [super init]) {
+    if ((self = [super init])) {
         
     }
-    
-    return self;
+    return [self autorelease];
 }
-
-
-
 
 #pragma mark sets
 //setea segun el valor si puede o no reproducir los efectos

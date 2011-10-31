@@ -9,11 +9,24 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "MenuLayer.h"
+#import "GameSettingsController.h"
+#import "CDAudioManager.h"
 
 @interface ConfigScene : CCLayer {
     
+    CCMenuItemToggle *_configItemMusic;
+    CCMenuItemToggle *_configItemFx;
+    UISlider *volumeControl;
+    
+    GameSettingsController *_gameSettingsController;
+    
 }
 
+@property (nonatomic,retain) GameSettingsController * gameSettingsController;
+
 +(id)scene;
+
+- (void) toggleEffectsOnOff;
+- (void) toggleMusicOnOff;
 
 @end
