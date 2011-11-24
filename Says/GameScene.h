@@ -8,10 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "GameController.h"
+#import "GameButton.h"
+
+@class GameController;
 
 @interface GameScene : CCLayer {
 
+    GameController *_gameController;
+    
+    CCArray *_butArray;
 }
+
+@property (nonatomic,retain) CCArray *butArray;
 
 +(id)scene;
 
