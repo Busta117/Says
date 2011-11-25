@@ -23,5 +23,7 @@
 @property (nonatomic,retain) CCArray *butArray;
 
 +(id)scene;
+- (void) pressButtonHuman;
+
 
 @end

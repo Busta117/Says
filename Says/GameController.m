@@ -28,7 +28,8 @@
     NSSet *touchesSet = [event allTouches];
     if (touchesSet.count == 1) 
     {
-        
+        GameButton *boton = [((GameScene *)self.target).butArray objectAtIndex:0];
+        [boton pressButtonRobot];
     }
 }
 
@@ -44,22 +45,8 @@
     NSSet *touchesSet = [event allTouches];
     if (touchesSet.count == 1) 
     {
-        UITouch *touch = [[touchesSet allObjects] objectAtIndex: 0];
-        CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
-        
-        GameScene * target_ = ((GameScene *)self.target);
-        
-        for (uint i= 0; i <[target_.butArray count] ; i++) {
-            
-            GameButton * but = (GameButton *)[target_.butArray objectAtIndex:i];
-            
-            if (CGRectContainsPoint(but.rect,touchLocation)) {
-                NSLog(@"hola");
-                [but pressButton];
-                break;
-            }
-            
-        }
+//        UITouch *touch = [[touchesSet allObjects] objectAtIndex: 0];
+//        CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
         
     }
 }

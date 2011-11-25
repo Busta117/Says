@@ -29,40 +29,41 @@
         
         self.pressed = NO; 
         self.tag = tagBut;
-        self.currentSprite = [CCSprite spriteWithFile:[NSString stringWithFormat:@"but-%d.png",self.tag]];
+        self.currentSprite = [CCMenuItemImage itemFromNormalImage:[NSString stringWithFormat:@"but-%d.png",self.tag] selectedImage:[NSString stringWithFormat:@"but-%d-hover.png",self.tag] disabledImage:[NSString stringWithFormat:@"but-%d-hover-hi.png",self.tag] target:self selector:@selector(pressButtonHuman)];
         self.currentSprite.position = pos;
         self.position = pos;
         
-        self.rect = CGRectMake(pos.x - self.currentSprite.contentSize.width/2, pos.y - self.currentSprite.contentSize.height/2, self.currentSprite.contentSize.width, self.currentSprite.contentSize.height);
+        self.rect = self.currentSprite.rect;
     }
     
     return self;
 }
 
-//ejecuta la accion para cambiar el sprite y sonar el efecto
-- (void) pressButton
+//cuando una persona unde el boton
+- (void) pressButtonHuman
 {
-    [self changeSprite];
     [self playEffect];
-//    [self schedule:@selector(changeSprite) interval:1.0]; //pasado X segundos cambia otra vez la imagen del boton
+    NSLog(@"humano preciona boton numero %d",self.tag+1);
+}
+
+//ejecuta la accion para cambiar el sprite y sonar el efecto cuando se va a mostrar la seciencia
+- (void) pressButtonRobot
+{
+    [self playEffect];
+    timerShowHide = [NSTimer scheduledTimerWithTimeInterval:0.15 target:self selector:@selector(changeSprite) userInfo:nil repeats:YES];	
     
 }
 
+//cambia el sprite del boton cuando se está mostrando la secuencia
+//el truco es desactivando el boton por un instante, el boton tiene 3 estados, cada uno con una imagen, para la muestra de la secuencia se muestra el estado inactivo del boton
 - (void) changeSprite
 {
-    
-    CCArray *framesAnim = [CCArray arrayWithCapacity:1];
-    
-    CCTexture2D* texture = [[CCTextureCache sharedTextureCache] addImage:[NSString stringWithFormat:@"but-%d-hover.png",self.tag]];
-    CGSize texSize = texture.contentSize;
-    CGRect texRect = CGRectMake(0, 0, texSize.width, texSize.height);
-    CCSpriteFrame* frame = [CCSpriteFrame frameWithTexture:texture rect:texRect];
-    [framesAnim addObject:frame];    
-    
-    CCAnimate *animation = [CCAnimate actionWithAnimation:[CCAnimation animationWithFrames:[framesAnim getNSArray]  delay:0.15f] restoreOriginalFrame:YES];
-    
-    [self.currentSprite runAction:animation];
-    
+    if ([self.currentSprite isEnabled]) {
+        [self.currentSprite setIsEnabled:NO];
+    }else{
+        [timerShowHide invalidate];
+        [self.currentSprite setIsEnabled:YES];
+    }
 }
 
 

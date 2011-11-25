@@ -44,6 +44,15 @@
 		52EBF3B0147DED5900E43496 /* but-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 52EBF39E147DED5900E43496 /* but-7.png */; };
 		52EBF3B1147DED5900E43496 /* but-8-hover.png in Resources */ = {isa = PBXBuildFile; fileRef = 52EBF39F147DED5900E43496 /* but-8-hover.png */; };
 		52EBF3B2147DED5900E43496 /* but-8.png in Resources */ = {isa = PBXBuildFile; fileRef = 52EBF3A0147DED5900E43496 /* but-8.png */; };
+		52EEA69B147F5A2B0058F5E5 /* but-0-hover-hi.png in Resources */ = {isa = PBXBuildFile; fileRef = 52EEA692147F5A2B0058F5E5 /* but-0-hover-hi.png */; };
+		52EEA69C147F5A2B0058F5E5 /* but-1-hover-hi.png in Resources */ = {isa = PBXBuildFile; fileRef = 52EEA693147F5A2B0058F5E5 /* but-1-hover-hi.png */; };
+		52EEA69D147F5A2B0058F5E5 /* but-2-hover-hi.png in Resources */ = {isa = PBXBuildFile; fileRef = 52EEA694147F5A2B0058F5E5 /* but-2-hover-hi.png */; };
+		52EEA69E147F5A2B0058F5E5 /* but-3-hover-hi.png in Resources */ = {isa = PBXBuildFile; fileRef = 52EEA695147F5A2B0058F5E5 /* but-3-hover-hi.png */; };
+		52EEA69F147F5A2B0058F5E5 /* but-4-hover-hi.png in Resources */ = {isa = PBXBuildFile; fileRef = 52EEA696147F5A2B0058F5E5 /* but-4-hover-hi.png */; };
+		52EEA6A0147F5A2B0058F5E5 /* but-5-hover-hi.png in Resources */ = {isa = PBXBuildFile; fileRef = 52EEA697147F5A2B0058F5E5 /* but-5-hover-hi.png */; };
+		52EEA6A1147F5A2B0058F5E5 /* but-6-hover-hi.png in Resources */ = {isa = PBXBuildFile; fileRef = 52EEA698147F5A2B0058F5E5 /* but-6-hover-hi.png */; };
+		52EEA6A2147F5A2B0058F5E5 /* but-7-hover-hi.png in Resources */ = {isa = PBXBuildFile; fileRef = 52EEA699147F5A2B0058F5E5 /* but-7-hover-hi.png */; };
+		52EEA6A3147F5A2B0058F5E5 /* but-8-hover-hi.png in Resources */ = {isa = PBXBuildFile; fileRef = 52EEA69A147F5A2B0058F5E5 /* but-8-hover-hi.png */; };
 		9C3D7BE41444FF8D00B210F2 /* HowToScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BE31444FF8D00B210F2 /* HowToScene.m */; };
 		9C3D7BE81445019C00B210F2 /* TopTenScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BE71445019C00B210F2 /* TopTenScene.m */; };
 		9C3D7BEB1445023F00B210F2 /* ConfigScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BEA1445023F00B210F2 /* ConfigScene.m */; };
@@ -222,6 +231,15 @@
 		52EBF39E147DED5900E43496 /* but-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "but-7.png"; path = "Resources/but-7.png"; sourceTree = "<group>"; };
 		52EBF39F147DED5900E43496 /* but-8-hover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "but-8-hover.png"; path = "Resources/but-8-hover.png"; sourceTree = "<group>"; };
 		52EBF3A0147DED5900E43496 /* but-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "but-8.png"; path = "Resources/but-8.png"; sourceTree = "<group>"; };
+		52EEA692147F5A2B0058F5E5 /* but-0-hover-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "but-0-hover-hi.png"; path = "Resources/but-0-hover-hi.png"; sourceTree = "<group>"; };
+		52EEA693147F5A2B0058F5E5 /* but-1-hover-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "but-1-hover-hi.png"; path = "Resources/but-1-hover-hi.png"; sourceTree = "<group>"; };
+		52EEA694147F5A2B0058F5E5 /* but-2-hover-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "but-2-hover-hi.png"; path = "Resources/but-2-hover-hi.png"; sourceTree = "<group>"; };
+		52EEA695147F5A2B0058F5E5 /* but-3-hover-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "but-3-hover-hi.png"; path = "Resources/but-3-hover-hi.png"; sourceTree = "<group>"; };
+		52EEA696147F5A2B0058F5E5 /* but-4-hover-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "but-4-hover-hi.png"; path = "Resources/but-4-hover-hi.png"; sourceTree = "<group>"; };
+		52EEA697147F5A2B0058F5E5 /* but-5-hover-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "but-5-hover-hi.png"; path = "Resources/but-5-hover-hi.png"; sourceTree = "<group>"; };
+		52EEA698147F5A2B0058F5E5 /* but-6-hover-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "but-6-hover-hi.png"; path = "Resources/but-6-hover-hi.png"; sourceTree = "<group>"; };
+		52EEA699147F5A2B0058F5E5 /* but-7-hover-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "but-7-hover-hi.png"; path = "Resources/but-7-hover-hi.png"; sourceTree = "<group>"; };
+		52EEA69A147F5A2B0058F5E5 /* but-8-hover-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "but-8-hover-hi.png"; path = "Resources/but-8-hover-hi.png"; sourceTree = "<group>"; };
 		9C3D7BE21444FF8D00B210F2 /* HowToScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HowToScene.h; sourceTree = "<group>"; };
 		9C3D7BE31444FF8D00B210F2 /* HowToScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HowToScene.m; sourceTree = "<group>"; };
 		9C3D7BE61445019C00B210F2 /* TopTenScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopTenScene.h; sourceTree = "<group>"; };
@@ -616,6 +634,15 @@
 				52EBF39E147DED5900E43496 /* but-7.png */,
 				52EBF39F147DED5900E43496 /* but-8-hover.png */,
 				52EBF3A0147DED5900E43496 /* but-8.png */,
+				52EEA692147F5A2B0058F5E5 /* but-0-hover-hi.png */,
+				52EEA693147F5A2B0058F5E5 /* but-1-hover-hi.png */,
+				52EEA694147F5A2B0058F5E5 /* but-2-hover-hi.png */,
+				52EEA695147F5A2B0058F5E5 /* but-3-hover-hi.png */,
+				52EEA696147F5A2B0058F5E5 /* but-4-hover-hi.png */,
+				52EEA697147F5A2B0058F5E5 /* but-5-hover-hi.png */,
+				52EEA698147F5A2B0058F5E5 /* but-6-hover-hi.png */,
+				52EEA699147F5A2B0058F5E5 /* but-7-hover-hi.png */,
+				52EEA69A147F5A2B0058F5E5 /* but-8-hover-hi.png */,
 				5212E783145DF9B300E17D0F /* fxOff_up.png */,
 				5212E784145DF9B300E17D0F /* fxOn_up.png */,
 				5212E77B145DF68600E17D0F /* musicOff_dwn.png */,
@@ -1081,6 +1108,15 @@
 				52EBF3B0147DED5900E43496 /* but-7.png in Resources */,
 				52EBF3B1147DED5900E43496 /* but-8-hover.png in Resources */,
 				52EBF3B2147DED5900E43496 /* but-8.png in Resources */,
+				52EEA69B147F5A2B0058F5E5 /* but-0-hover-hi.png in Resources */,
+				52EEA69C147F5A2B0058F5E5 /* but-1-hover-hi.png in Resources */,
+				52EEA69D147F5A2B0058F5E5 /* but-2-hover-hi.png in Resources */,
+				52EEA69E147F5A2B0058F5E5 /* but-3-hover-hi.png in Resources */,
+				52EEA69F147F5A2B0058F5E5 /* but-4-hover-hi.png in Resources */,
+				52EEA6A0147F5A2B0058F5E5 /* but-5-hover-hi.png in Resources */,
+				52EEA6A1147F5A2B0058F5E5 /* but-6-hover-hi.png in Resources */,
+				52EEA6A2147F5A2B0058F5E5 /* but-7-hover-hi.png in Resources */,
+				52EEA6A3147F5A2B0058F5E5 /* but-8-hover-hi.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

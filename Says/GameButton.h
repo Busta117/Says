@@ -9,17 +9,20 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface GameButton : CCNode {
+@interface GameButton : CCLayer {
     
-    CCSprite *_currentSprite;
+    //CCSprite *_currentSprite;
+    CCMenuItem *_currentSprite;
     CGPoint _position;
     int _tag;
     BOOL _pressed;
     CGRect _rect;
     
+    NSTimer *timerShowHide;
+    
 }
 
-@property (nonatomic, retain) CCSprite *currentSprite;
+@property (nonatomic, retain) CCMenuItem *currentSprite;
 @property (nonatomic, assign) CGPoint position;
 @property (nonatomic, assign) int tag;
 @property (nonatomic, assign) BOOL pressed;
@@ -27,7 +30,8 @@
 
 + (id) buttonWithTag:(int)tagBut andPosition:(CGPoint) pos;
 - (id) initWithTag:(int)tagBut andPosition:(CGPoint) pos;
-- (void) pressButton;
+- (void) pressButtonHuman;
+- (void) pressButtonRobot;
 - (void) changeSprite;
 - (void) playEffect;
 

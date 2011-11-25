@@ -34,6 +34,7 @@
         CGSize winSize = [[CCDirector sharedDirector] winSize];
         
         CGPoint positionBut = CGPointZero;
+        CCMenu *gameButs = [CCMenu menuWithItems:nil];
         
         float deltaY =  80;
         int row = 0;
@@ -42,11 +43,13 @@
             positionBut = CGPointMake(winSize.width*((i%3)+1)/4, winSize.height*0.8 - (deltaY*(row)) );
             GameButton *but = [GameButton buttonWithTag:i andPosition:positionBut];
             [self.butArray addObject:but];
-            [self addChild:but.currentSprite z:1];
+            [gameButs addChild:but.currentSprite];
             if (i == 2 ||i == 5) {
                 row++;
-            }
+            }   
         }
+        gameButs.position = CGPointZero;
+        [self addChild:gameButs z:1];
         
         _gameController = [[GameController alloc] initWithTarget:self];
         
@@ -54,6 +57,7 @@
     
     return self;
 }
+
 
 
 #pragma mark Touch Events
