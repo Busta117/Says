@@ -78,15 +78,20 @@
        
         //Add the left entries to the newTopTenDiciontary with her keys updated
         for (int i = lastPosition; i < [topTen count]; i++) {
-            [newTopTen addObject:[topTen objectAtIndex:i]];
-
+            
             //The rest must be forgiven becouse the TopTen is fully
             if([newTopTen count] == MAX_TOP_TEN_ENTRIES){
                 break;
             }
+            
+            [newTopTen addObject:[topTen objectAtIndex:i]];
+
+            
         }
     }else{
-        [newTopTen addObject:newEntry];
+        if([newTopTen count] < MAX_TOP_TEN_ENTRIES){
+            [newTopTen addObject:newEntry];
+        }
     }
         
     //Free memory and sets the new value

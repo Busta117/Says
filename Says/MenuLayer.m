@@ -111,21 +111,12 @@
         CCMenu* menu = [CCMenu menuWithItems:btnPlay, btnHowTo, btnTopTen, btnConfig, btnAbout, nil];
         menu.position = CGPointMake(0.0f, 0.0f);
         [self addChild:menu];
-        
-        [TopTenManager clearTopTen];
-        [TopTenManager addTopTenEntry: [[TopTenEntry new] initWithName:@"Juan Esteban Jaramillo" andPoints:50]];
-        [TopTenManager addTopTenEntry: [[TopTenEntry new] initWithName:@"Juanito Gomez Mozquera" andPoints:55]];
-        [TopTenManager addTopTenEntry: [[TopTenEntry new] initWithName:@"ddd" andPoints:44]];
-        [TopTenManager addTopTenEntry: [[TopTenEntry new] initWithName:@"gggg" andPoints:22]];
-        [TopTenManager addTopTenEntry: [[TopTenEntry new] initWithName:@"www" andPoints:2]];
-        [TopTenManager addTopTenEntry: [[TopTenEntry new] initWithName:@"nnnn" andPoints:1]];
-        [TopTenManager addTopTenEntry: [[TopTenEntry new] initWithName:@"bbbb" andPoints:5]];
-        [TopTenManager addTopTenEntry: [[TopTenEntry new] initWithName:@"dbf" andPoints:200]];
-        [TopTenManager addTopTenEntry: [[TopTenEntry new] initWithName:@"fghrw" andPoints:100]];
-        [TopTenManager addTopTenEntry: [[TopTenEntry new] initWithName:@"qweqwe" andPoints:150]];
 
-        [TopTenManager addTopTenEntry: [[TopTenEntry new] initWithName:@"hhhhhhhh" andPoints:100]];
-        [TopTenManager addTopTenEntry: [[TopTenEntry new] initWithName:@"ggggghhh" andPoints:300]];
+        
+//        DEBUG ENTRYES
+//        [TopTenManager clearTopTen];
+//        [TopTenManager addTopTenEntry: [[TopTenEntry new] initWithName:@"hhhhhhhh" andPoints:100]];
+//        [TopTenManager addTopTenEntry: [[TopTenEntry new] initWithName:@"ggfggghhh" andPoints:300]];
 
 
     }

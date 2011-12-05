@@ -51,59 +51,21 @@
             [self addChild:nameLbl];
             [self addChild:pointsLbl];
             
-//            CCMenuItemLabel* numberLabel = [CCMenuItemLabel itemWithLabel:
-//                                            [[[CCLabelTTF alloc] initWithString:[NSString stringWithFormat:@"%d", i] fontName:FONT_NAME fontSize:FONT_SIZE] autorelease]
-//                                            ];
-//            
-//            CCMenuItemLabel* nameLabel = [CCMenuItemLabel itemWithLabel:
-//                                          [[[CCLabelTTF alloc] initWithString:[entry name] fontName:FONT_NAME fontSize:FONT_SIZE] autorelease] 
-//                                          ];
-//            
-//            CCMenuItemLabel* pointsLabel = [CCMenuItemLabel itemWithLabel:
-//                                            [[[CCLabelTTF alloc] initWithString:[NSString stringWithFormat:@"%d", [entry points]] fontName:FONT_NAME fontSize:FONT_SIZE] autorelease]
-//                                            ];
-//            
-//            [menu addChild:numberLabel];
-//            [menu addChild:nameLabel];
-//            [menu addChild:pointsLabel];
+            
+            CCMenuItemSprite* btnBack = [CCMenuItemSprite itemFromNormalSprite:[CCSprite spriteWithFile:@"back.png"] 
+                                                                selectedSprite:[CCSprite spriteWithFile:@"back.png"] 
+                                                                        target:self 
+                                                                      selector:@selector(menuBackBtnTouched:)];
+            
+            btnBack.anchorPoint = CGPointZero;
+            
+            [menu addChild:btnBack];
+            
+            menu.anchorPoint = CGPointZero;
+            menu.position = CGPointZero;
+            
+            [self addChild:menu];
         }
-        
-        //Fill the rest with empty spaces
-        for (int i = [topTen count]; i < 10; i++) {
-            
-            CCLabelTTF *numberLbl = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d", i+1] fontName:FONT_NAME fontSize:FONT_SIZE];
-            
-            CCLabelTTF *nameLbl = [CCLabelTTF labelWithString:@"-" fontName:FONT_NAME fontSize:FONT_SIZE];
-            
-            CCLabelTTF *pointsLbl = [CCLabelTTF labelWithString:@"-" fontName:FONT_NAME fontSize:FONT_SIZE];
-            
-            
-//            [menu addChild: [CCMenuItemLabel itemWithLabel:[[[CCLabelTTF alloc] initWithString:[NSString stringWithFormat:@"%d",i+1] fontName:FONT_NAME fontSize:FONT_SIZE] autorelease]] ];
-//
-//            [menu addChild: [CCMenuItemLabel itemWithLabel:[[[CCLabelTTF alloc] initWithString:@"" fontName:FONT_NAME fontSize:FONT_SIZE] autorelease]] ];
-//            
-//            [menu addChild: [CCMenuItemLabel itemWithLabel:[[[CCLabelTTF alloc] initWithString:@"" fontName:FONT_NAME fontSize:FONT_SIZE] autorelease]] ];
-        }
-        
-        
-        CCMenuItemSprite* btnBack = [CCMenuItemSprite itemFromNormalSprite:[CCSprite spriteWithFile:@"back.png"] 
-                                                            selectedSprite:[CCSprite spriteWithFile:@"back.png"] 
-                                                                    target:self 
-                                                                  selector:@selector(menuBackBtnTouched:)];
-        
-        btnBack.anchorPoint = CGPointZero;
-//        btnBack.position = CGPointMake( [btnBack contentSize].width, [btnBack contentSize].height);
-        
-        [menu addChild:btnBack];
-//                
-//        [menu alignItemsInColumns:[NSNumber numberWithInt:3],[NSNumber numberWithInt:3],[NSNumber numberWithInt:3],
-//         [NSNumber numberWithInt:3],[NSNumber numberWithInt:3],[NSNumber numberWithInt:3],
-//         [NSNumber numberWithInt:3],[NSNumber numberWithInt:3],[NSNumber numberWithInt:3],
-//         [NSNumber numberWithInt:3],[NSNumber numberWithInt:1],nil];
-//        
-        menu.anchorPoint = CGPointZero;
-        menu.position = CGPointZero;
-        [self addChild:menu];
 
     }
     return self;
